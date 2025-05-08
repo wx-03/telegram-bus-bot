@@ -1,6 +1,6 @@
 from .messaging import send_message_inline_keyboard, send_message, answerCallbackQuery
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
-from helpers.helpers import format_timing
+from helpers.helpers import format_timing, get_bus_stop_description
 
 def handle_command(chatid, command_word, args):
     match command_word:
@@ -22,7 +22,9 @@ def busstop(chatid, args):
                 "callback_data": f'{bus_stop_code}:{service}'
             }
             inline_keyboard.append([inline_keyboard_button])
-        send_message_inline_keyboard(chatid, "Please select bus service:", inline_keyboard)
+        bus_stop_description = get_bus_stop_description(bus_stop_code)
+        message = f'<b>{bus_stop_description} ({bus_stop_code})</b>\nPlease select bus service:'
+        send_message_inline_keyboard(chatid, message, inline_keyboard)
 
 def handle_callback_query(data):
     chat_id = data['message']['chat']['id']

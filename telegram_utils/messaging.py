@@ -22,6 +22,7 @@ def send_message_inline_keyboard(chat_id, text, buttons):
         "reply_markup": {
             "inline_keyboard": buttons
         },
+        "parse_mode": "html"
     })
 
 def send_message_inline_keyboard_from_list(chat_id, text, list):
