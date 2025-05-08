@@ -1,6 +1,6 @@
 from .messaging import send_message_inline_keyboard, send_message, answerCallbackQuery, send_message_inline_keyboard_from_list
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
-from helpers.helpers import format_timing, get_bus_stop_description, get_load, get_type
+from helpers.helpers import format_timing, get_bus_stop_description, get_load, get_type, is_bus_stop_code
 import json
 
 def handle_command(chatid, command_word, args):
@@ -13,7 +13,7 @@ def handle_command(chatid, command_word, args):
 def busstop(chatid, args):
     if len(args) == 0:
         raise Exception('Please provide bus stop number or name')
-    if len(args) == 1 and args[0].isnumeric():
+    if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
         send_bus_services(chatid, bus_stop_code)
     else:
@@ -33,6 +33,10 @@ def busstop(chatid, args):
                 for stop in stops:
                     if search_query in stop:
                         search_results.append(stops[stop])
+                
+                if not search_results:
+                    send_message(chatid, 'No bus stops found. Try another search query.')
+                    return
 
                 inline_keyboard = []
                 for result in search_results:
@@ -44,9 +48,9 @@ def busstop(chatid, args):
                         inline_keyboard.append([button])
                 send_message_inline_keyboard(chatid, 'Choose bus stop:', inline_keyboard)
 
-
 def send_bus_services(chatid, bus_stop_code):
     services = get_bus_services_by_code(bus_stop_code) 
+    bus_stop_description = get_bus_stop_description(bus_stop_code)
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
@@ -54,10 +58,8 @@ def send_bus_services(chatid, bus_stop_code):
                 "callback_data": f'{bus_stop_code}:{service}'
             }
         inline_keyboard.append([inline_keyboard_button])
-    bus_stop_description = get_bus_stop_description(bus_stop_code)
     message = f'<b>{bus_stop_description} ({bus_stop_code})</b>\nPlease select bus service:'
     send_message_inline_keyboard(chatid, message, inline_keyboard)
-
 
 def handle_callback_query(data):
     chat_id = data['message']['chat']['id']

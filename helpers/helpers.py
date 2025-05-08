@@ -31,5 +31,9 @@ def get_type(str):
 def get_bus_stop_description(code):
     with open('storage/bus_stop_map_code.json', 'r') as f:
         bus_stops = json.load(f)
+        if not code in bus_stops:
+            raise Exception('No bus stops with this code')
         return bus_stops[code]['Description']
-    raise Exception('Bus stop not found')
+
+def is_bus_stop_code(str):
+    return str.isnumeric() and (len(str) == 5)
