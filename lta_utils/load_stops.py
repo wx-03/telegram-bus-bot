@@ -1,21 +1,19 @@
+import json
 import os
+
 import dotenv
 import requests
-import json
 
 dotenv.load_dotenv()
-API_KEY = os.getenv('API_KEY')
+API_KEY = os.getenv("API_KEY")
 URL = "https://datamall2.mytransport.sg/ltaodataservice/BusStops"
-headers = {
-  'AccountKey': API_KEY,
-  'Accept': 'application/json'
-}
+headers = {"AccountKey": API_KEY, "Accept": "application/json"}
 
 i = 0
 all_stops = []
 while True:
-    response = requests.request("GET", f'{URL}?$skip={i * 500}', headers=headers)
-    data = response.json()['value']
+    response = requests.request("GET", f"{URL}?$skip={i * 500}", headers=headers)
+    data = response.json()["value"]
     if not data:
         break
     all_stops.extend(data)
