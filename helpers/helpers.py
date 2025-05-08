@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 
 def format_timing(str):
@@ -8,6 +8,19 @@ def format_timing(str):
     dt = datetime.fromisoformat(str)
     formatted = dt.strftime('%I:%M %p')
     return formatted
+
+def get_time_difference(str):
+    if str == '':
+        return ''
+    tz_sgt = timezone(timedelta(hours=8))
+    now = datetime.now(tz_sgt)
+    later = datetime.fromisoformat(str)
+    return later - now
+
+def format_timedelta(timedelta):
+    seconds = timedelta.seconds
+    minutes = seconds // 60
+    return f"{minutes} min"
 
 def get_load(str):
     match str:
