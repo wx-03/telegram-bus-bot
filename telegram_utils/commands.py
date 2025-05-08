@@ -68,6 +68,8 @@ def handle_callback_query(data):
         message = f"<b>{get_bus_stop_description(bus_stop_code)} ({bus_stop_code})\nBus {service_no}</b>\n\n"
         for arrival in arrivals:
             timing = format_timing(arrival['EstimatedArrival'])
+            if timing == '':
+                continue
             load = get_load(arrival['Load'])
             type = get_type(arrival['Type'])
             message += f'<u>{timing}</u>\n{load}\n{type}\n\n'

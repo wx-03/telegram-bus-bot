@@ -12,7 +12,6 @@ def handle_message(data):
             handle_callback_query(data['callback_query'])
         except Exception as e:
             send_message(chat_id, str(e))
-            raise e
 
     if 'message' in data:
         chat_id = data['message']['chat']['id']
@@ -28,5 +27,4 @@ def handle_message(data):
                 handle_command(chat_id, command_word, args)
         except Exception as e:
             send_message(chat_id, str(e))
-            raise e
 

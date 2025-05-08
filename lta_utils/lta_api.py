@@ -26,11 +26,5 @@ def get_bus_timing(code, service):
     url = 'https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival'
     res = requests.get(f'{url}?BusStopCode={code}&ServiceNo={service}', headers=HEADERS)
     data = res.json()['Services'][0]
-    arrivals = []
-    if 'NextBus' in data:
-        arrivals.append(data['NextBus'])
-    if 'NextBus2' in data:
-        arrivals.append(data['NextBus2'])
-    if 'NextBus3' in data:
-        arrivals.append(data['NextBus3'])
+    arrivals = [data['NextBus'], data['NextBus2'], data['NextBus3']]
     return arrivals
