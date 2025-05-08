@@ -13,8 +13,14 @@ def handle_command(chatid, command_word, args):
     match command_word:
         case 'busstop':
             busstop(chatid, args)
+        case 'help':
+            help(chatid)
         case _:
             raise Exception('Invalid command 😯')
+
+def help(chatid):
+    message = f"<b>Commands:</b>\n\n<code>/busstop {{bus stop code}}</code>\nGet bus timings using bus stop code\n\n<code>/busstop {{bus stop name}}</code>\nSearch for bus stops with names that contain the search query"
+    send_message(chatid, message)
 
 def busstop(chatid, args):
     if len(args) == 0:
