@@ -1,6 +1,6 @@
 from flask import Flask, request
-import json
-from bot_utils import send_message
+from telegram_utils.error_handling import send_error_message
+from telegram_utils.message_handler import handle_message
 
 app = Flask(__name__)
 
@@ -8,12 +8,10 @@ app = Flask(__name__)
 @app.route("/webhook", methods=["POST"])
 def webhook():
 	data = request.get_json()
-	print(json.dumps(data, indent=4))
-	chatid = data['message']['chat']['id']
-	if not 'text' in data['message']:
-		send_message(chatid, "I only can understand text :(")
-		return "OK", 200
-	send_message(chatid, data['message']['text'])
+	try:
+		handle_message(data)
+	except Exception as e:
+		send_error_message(data['message']['chat']['id'], str(e))
 	return "OK", 200
 
 if __name__ == "__main__":
