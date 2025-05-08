@@ -17,7 +17,7 @@ with open('bus_stops.json', 'r') as json_file:
     with open('bus_stop_map_description.json', 'w') as f:
         dict = {}
         for stop in bus_stops:
-            key = stop['Description']
+            key = stop['Description'].lower()
             info = {
                 "BusStopCode": stop['BusStopCode'],
                 "RoadName": stop['RoadName'],
