@@ -9,9 +9,7 @@ def format_timing(str):
     return formatted
 
 def get_bus_stop_description(code):
-    with open('storage/bus_stops.json', 'r') as f:
+    with open('storage/bus_stop_map_code.json', 'r') as f:
         bus_stops = json.load(f)
-    for stop in bus_stops:
-        if stop['BusStopCode'] == code:
-            return stop['Description']
+        return bus_stops[code]['Description']
     raise Exception('Bus stop not found')
