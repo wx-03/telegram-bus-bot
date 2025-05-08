@@ -1,6 +1,6 @@
 from .messaging import send_message_inline_keyboard, send_message, answerCallbackQuery, send_message_inline_keyboard_from_list
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
-from helpers.helpers import format_timing, get_bus_stop_description
+from helpers.helpers import format_timing, get_bus_stop_description, get_load, get_type
 import json
 
 def handle_command(chatid, command_word, args):
@@ -28,6 +28,23 @@ def busstop(chatid, args):
                     send_message_inline_keyboard_from_list(chatid, 'Select bus stop:', [stop['BusStopCode'] for stop in stops[search_query]])
                 else:
                     send_bus_services(chatid, stops[search_query][0]['BusStopCode'])
+            else:
+                search_results = []
+                # Search for descriptions that contain query
+                for stop in stops:
+                    if search_query in stop:
+                        search_results.append(stops[stop])
+
+                inline_keyboard = []
+                for result in search_results:
+                    for bus_stop in result:
+                        button = {
+                            "text": f'{bus_stop['Description']} ({bus_stop['BusStopCode']})',
+                            "callback_data": bus_stop['BusStopCode']
+                        }
+                        inline_keyboard.append([button])
+                send_message_inline_keyboard(chatid, 'Choose bus stop:', inline_keyboard)
+
 
 def send_bus_services(chatid, bus_stop_code):
     services = get_bus_services_by_code(bus_stop_code) 
@@ -48,10 +65,12 @@ def handle_callback_query(data):
     if ':' in data['data']:
         bus_stop_code, service_no = data['data'].split(':')
         arrivals = get_bus_timing(bus_stop_code, service_no)
-        message = ""
+        message = f"<b>{get_bus_stop_description(bus_stop_code)} ({bus_stop_code})\nBus {service_no}</b>\n\n"
         for arrival in arrivals:
             timing = format_timing(arrival['EstimatedArrival'])
-            message += f'<b>{timing}</b>\n'
+            load = get_load(arrival['Load'])
+            type = get_type(arrival['Type'])
+            message += f'<u>{timing}</u>\n{load}\n{type}\n\n'
         send_message(chat_id, message)
     elif data['data'].isnumeric():
         bus_stop_code = data['data']

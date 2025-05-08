@@ -7,6 +7,7 @@ with open('bus_stops.json', 'r') as json_file:
         for stop in bus_stops:
             key = stop['BusStopCode']
             info = {
+                "BusStopCode": stop['BusStopCode'],
                 "RoadName": stop['RoadName'],
                 "Description": stop['Description'],
                 "Latitude": stop['Latitude'],
@@ -21,6 +22,7 @@ with open('bus_stops.json', 'r') as json_file:
             info = {
                 "BusStopCode": stop['BusStopCode'],
                 "RoadName": stop['RoadName'],
+                "Description": stop['Description'],
                 "Latitude": stop['Latitude'],
                 "Longitude": stop['Longitude']
             }
