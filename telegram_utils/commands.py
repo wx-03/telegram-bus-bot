@@ -19,7 +19,6 @@ def busstop(chatid, args):
     else:
         # Search bus stop descriptions
         search_query = " ".join(args).lower().strip()
-        print(search_query)
         with open('storage/bus_stop_map_description.json', 'r') as f:
             stops = json.load(f)
             # If there is an exact match
