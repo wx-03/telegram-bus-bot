@@ -4,8 +4,6 @@ from .commands import handle_command, handle_callback_query
 from .messaging import send_message
 
 def handle_message(data):
-    print(json.dumps(data, indent=4))
-
     if 'callback_query' in data:
         chat_id = data['callback_query']['message']['chat']['id']
         try:
