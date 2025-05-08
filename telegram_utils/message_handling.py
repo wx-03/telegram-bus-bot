@@ -1,6 +1,8 @@
-from .messaging import send_message
-from .commands import handle_command
 import json
+
+from .commands import handle_command
+from .messaging import send_message
+
 
 def handle_message(data):
     print(json.dumps(data, indent=4))

@@ -1,5 +1,6 @@
 from .messaging import send_message
 
+
 def handle_command(chatid, command_word, args):
     match command_word:
         case 'busstop':
