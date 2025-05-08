@@ -1,4 +1,5 @@
 import json
+import textwrap
 
 from helpers.helpers import (format_timing, get_bus_stop_description, get_load,
                              get_type, is_bus_stop_code)
@@ -15,11 +16,29 @@ def handle_command(chatid, command_word, args):
             busstop(chatid, args)
         case 'help':
             help(chatid)
+        case 'start':
+            start(chatid)
         case _:
             raise Exception('Invalid command 😯')
 
+def start(chatid):
+    message = textwrap.dedent("""
+        Welcome to SGNextBus!
+        This bot helps you check real-time bus arrival timings and bus stop info in Singapore
+        Type /help for a full list of commands and their usage
+    """)
+    send_message(chatid, message)
+
 def help(chatid):
-    message = f"<b>Commands:</b>\n\n<code>/busstop {{bus stop code}}</code>\nGet bus timings using bus stop code\n\n<code>/busstop {{bus stop name}}</code>\nSearch for bus stops with names that contain the search query"
+    message = textwrap.dedent("""
+    <b>Commands:</b>
+
+    <code>/busstop {bus stop code}</code>
+    Get bus timings using bus stop code
+    
+    <code>/busstop {bus stop name}</code>
+    Search for bus stops with names that contain the search query
+    """)
     send_message(chatid, message)
 
 def busstop(chatid, args):
