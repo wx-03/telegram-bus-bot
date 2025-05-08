@@ -1,7 +1,8 @@
 import json
 
-from .commands import handle_command, handle_callback_query
+from .commands import handle_callback_query, handle_command
 from .messaging import send_message
+
 
 def handle_message(data):
     if 'callback_query' in data:

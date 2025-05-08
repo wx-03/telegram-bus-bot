@@ -1,7 +1,13 @@
-from .messaging import send_message_inline_keyboard, send_message, answerCallbackQuery, send_message_inline_keyboard_from_list
-from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
-from helpers.helpers import format_timing, get_bus_stop_description, get_load, get_type, is_bus_stop_code
 import json
+
+from helpers.helpers import (format_timing, get_bus_stop_description, get_load,
+                             get_type, is_bus_stop_code)
+from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
+
+from .messaging import (answerCallbackQuery, send_message,
+                        send_message_inline_keyboard,
+                        send_message_inline_keyboard_from_list)
+
 
 def handle_command(chatid, command_word, args):
     match command_word:
@@ -42,7 +48,7 @@ def busstop(chatid, args):
                 for result in search_results:
                     for bus_stop in result:
                         button = {
-                            "text": f'{bus_stop['Description']} ({bus_stop['BusStopCode']})',
+                            "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
                             "callback_data": bus_stop['BusStopCode']
                         }
                         inline_keyboard.append([button])
