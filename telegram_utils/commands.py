@@ -85,9 +85,9 @@ def send_bus_services(chatid, bus_stop_code):
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
-                "text": service,
-                "callback_data": f'{bus_stop_code}:{service}'
-            }
+            "text": service,
+            "callback_data": f'{bus_stop_code}:{service}'
+        }
         inline_keyboard.append([inline_keyboard_button])
     message = f'<b>{bus_stop_description} ({bus_stop_code})</b>\nPlease select bus service:'
     send_message_inline_keyboard(chatid, message, inline_keyboard)
