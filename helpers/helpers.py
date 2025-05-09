@@ -18,8 +18,12 @@ def get_time_difference(str):
     return later - now
 
 def format_timedelta(timedelta):
+    if timedelta.days < 0:
+        return 'Arr'
     seconds = timedelta.seconds
     minutes = seconds // 60
+    if minutes <= 0:
+        return 'Arr'
     return f"{minutes} min"
 
 def get_load(str):
