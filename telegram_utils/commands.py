@@ -31,13 +31,13 @@ def start(chatid):
 
 def help(chatid):
     message = textwrap.dedent("""
-    <b>Commands:</b>
+        <b>Commands:</b>
 
-    <code>/busstop {bus stop code}</code>
-    Get bus timings using bus stop code
-    
-    <code>/busstop {bus stop name}</code>
-    Search for bus stops with names that contain the search query
+        <code>/busstop {bus stop code}</code>
+        Get bus timings using bus stop code
+        
+        <code>/busstop {bus stop name}</code>
+        Search for bus stops with names that contain the search query
     """)
     send_message(chatid, message)
 
