@@ -1,7 +1,6 @@
 from flask import Flask, request
 
 from telegram_utils.message_handling import handle_message
-from telegram_utils.messaging import send_message
 
 app = Flask(__name__)
 
