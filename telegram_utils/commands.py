@@ -96,14 +96,18 @@ def busstop(chat_id: str, args: list[str]):
                 )
 
 
+def sort_bus_services(service: dict) -> str:
+    return service["service"].zfill(3)
+
+
 def send_bus_services(chat_id: str, bus_stop_code: str):
-    services = sorted(get_bus_services_by_code(bus_stop_code), key=lambda x: x.zfill(3))
+    services = sorted(get_bus_services_by_code(bus_stop_code), key=sort_bus_services)
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
-            "text": service,
-            "callback_data": f"{bus_stop_code}:{service}",
+            "text": f'{service["service"]} ({format_timedelta(get_time_difference(service["next_arrival"]))})',
+            "callback_data": f"{bus_stop_code}:{service["service"]}",
         }
         inline_keyboard.append([inline_keyboard_button])
     message = (

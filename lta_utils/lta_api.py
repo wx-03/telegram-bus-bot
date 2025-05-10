@@ -14,10 +14,15 @@ def get_bus_services_by_code(code: str) -> list[str]:
     res = requests.get(f"{url}?BusStopCode={code}", headers=HEADERS)
     if res.status_code != 200:
         raise Exception(f"Error occurred. Response status code: {res.status_code}")
+    if not "Services" in res.json():
+        return []
     services = res.json()["Services"]
     service_numbers = []
     for service in services:
-        service_numbers.append(service["ServiceNo"])
+        service_numbers.append({
+            "service": service["ServiceNo"],
+            "next_arrival": service["NextBus"]["EstimatedArrival"]
+        })
     return service_numbers
 
 
