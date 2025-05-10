@@ -107,7 +107,7 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
     for service in services:
         inline_keyboard_button = {
             "text": f'{service["service"]} ({format_timedelta(get_time_difference(service["next_arrival"]))})',
-            "callback_data": f"{bus_stop_code}:{service["service"]}",
+            "callback_data": f"{bus_stop_code}:{service['service']}",
         }
         inline_keyboard.append([inline_keyboard_button])
     message = (
