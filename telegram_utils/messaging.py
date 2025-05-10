@@ -5,37 +5,39 @@ import requests
 
 dotenv.load_dotenv()
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-TELEGRAM_API_URL = f'https://api.telegram.org/bot{BOT_TOKEN}'
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
+
 
 def send_message(chat_id, text):
-    requests.post(f'{TELEGRAM_API_URL}/sendMessage', json={
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "html"
-    })
+    requests.post(
+        f"{TELEGRAM_API_URL}/sendMessage",
+        json={"chat_id": chat_id, "text": text, "parse_mode": "html"},
+    )
+
 
 def send_message_inline_keyboard(chat_id, text, buttons):
-    requests.post(f'{TELEGRAM_API_URL}/sendMessage', json={
-        "chat_id": chat_id,
-        "text": text,
-        "reply_markup": {
-            "inline_keyboard": buttons
+    requests.post(
+        f"{TELEGRAM_API_URL}/sendMessage",
+        json={
+            "chat_id": chat_id,
+            "text": text,
+            "reply_markup": {"inline_keyboard": buttons},
+            "parse_mode": "html",
         },
-        "parse_mode": "html"
-    })
+    )
+
 
 def send_message_inline_keyboard_from_list(chat_id, text, list):
     inline_keyboard = []
     for item in list:
-        inline_keyboard_button = {
-            "text": item,
-            "callback_data": item
-        }
+        inline_keyboard_button = {"text": item, "callback_data": item}
         inline_keyboard.append([inline_keyboard_button])
-    send_message_inline_keyboard(chat_id, text , inline_keyboard)
+    send_message_inline_keyboard(chat_id, text, inline_keyboard)
+
 
 def answerCallbackQuery(callback_query_id):
-    requests.post(f'{TELEGRAM_API_URL}/answerCallbackQuery', json={
-        'callback_query_id': callback_query_id
-    })
+    requests.post(
+        f"{TELEGRAM_API_URL}/answerCallbackQuery",
+        json={"callback_query_id": callback_query_id},
+    )
