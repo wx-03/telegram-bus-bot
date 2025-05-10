@@ -19,10 +19,12 @@ def get_bus_services_by_code(code: str) -> list[str]:
     services = res.json()["Services"]
     service_numbers = []
     for service in services:
-        service_numbers.append({
-            "service": service["ServiceNo"],
-            "next_arrival": service["NextBus"]["EstimatedArrival"]
-        })
+        service_numbers.append(
+            {
+                "service": service["ServiceNo"],
+                "next_arrival": service["NextBus"]["EstimatedArrival"],
+            }
+        )
     return service_numbers
 
 
