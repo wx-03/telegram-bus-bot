@@ -80,7 +80,7 @@ def busstop(chatid, args):
                 send_message_inline_keyboard(chatid, 'Choose bus stop:', inline_keyboard)
 
 def send_bus_services(chatid, bus_stop_code):
-    services = get_bus_services_by_code(bus_stop_code) 
+    services = sorted(get_bus_services_by_code(bus_stop_code), key=lambda x: x.zfill(3))
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     inline_keyboard = []
     for service in services:
