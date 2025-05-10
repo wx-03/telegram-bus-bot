@@ -1,5 +1,3 @@
-import json
-
 from .commands import handle_callback_query, handle_command
 from .messaging import send_message
 
