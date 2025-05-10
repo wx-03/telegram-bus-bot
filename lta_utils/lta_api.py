@@ -31,6 +31,12 @@ def get_bus_services_by_code(code: str) -> list[str]:
 def get_bus_timing(code: str, service: str) -> list[dict]:
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}&ServiceNo={service}", headers=HEADERS)
+    if res.status_code != 200:
+        raise Exception(f"Error occurred. Resposnse status code: {res.status_code}")
+    if not "Services" in res.json():
+        raise Exception("No more bus liao :(")
+    if res.json()["Services"] == []:
+        raise Exception("No more bus liao :(")
     data = res.json()["Services"][0]
     arrivals = [data["NextBus"], data["NextBus2"], data["NextBus3"]]
     return arrivals
