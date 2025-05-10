@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timedelta, timezone
 
 
-def format_timing(str):
+def format_timing(str: str) -> str:
     if str == "":
         return ""
     dt = datetime.fromisoformat(str)
@@ -10,7 +10,7 @@ def format_timing(str):
     return formatted
 
 
-def get_time_difference(str):
+def get_time_difference(str: str) -> timedelta:
     if str == "":
         return ""
     tz_sgt = timezone(timedelta(hours=8))
@@ -19,7 +19,7 @@ def get_time_difference(str):
     return later - now
 
 
-def format_timedelta(timedelta):
+def format_timedelta(timedelta: timedelta) -> str:
     if timedelta.days < 0:
         return "Arr"
     seconds = timedelta.seconds
@@ -29,7 +29,7 @@ def format_timedelta(timedelta):
     return f"{minutes} min"
 
 
-def get_load(str):
+def get_load(str: str) -> str:
     match str:
         case "SEA":
             return "Seats available"
@@ -41,7 +41,7 @@ def get_load(str):
             return ""
 
 
-def get_type(str):
+def get_type(str: str) -> str:
     match str:
         case "SD":
             return "Single deck"
@@ -51,7 +51,7 @@ def get_type(str):
             return "Bendy"
 
 
-def get_bus_stop_description(code):
+def get_bus_stop_description(code: str) -> str:
     with open("storage/bus_stop_map_code.json", "r") as f:
         bus_stops = json.load(f)
         if not code in bus_stops:
@@ -59,5 +59,5 @@ def get_bus_stop_description(code):
         return bus_stops[code]["Description"]
 
 
-def is_bus_stop_code(str):
+def is_bus_stop_code(str: str) -> bool:
     return str.isnumeric() and (len(str) == 5)

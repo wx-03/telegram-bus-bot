@@ -9,7 +9,7 @@ API_KEY = os.getenv("API_KEY")
 HEADERS = {"AccountKey": API_KEY, "Accept": "application/json"}
 
 
-def get_bus_services_by_code(code):
+def get_bus_services_by_code(code: str) -> list[str]:
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}", headers=HEADERS)
     if res.status_code != 200:
@@ -21,7 +21,7 @@ def get_bus_services_by_code(code):
     return service_numbers
 
 
-def get_bus_timing(code, service):
+def get_bus_timing(code: str, service: str) -> list[dict]:
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}&ServiceNo={service}", headers=HEADERS)
     data = res.json()["Services"][0]

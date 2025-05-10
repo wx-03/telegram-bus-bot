@@ -11,19 +11,19 @@ from .messaging import (answerCallbackQuery, send_message,
                         send_message_inline_keyboard_from_list)
 
 
-def handle_command(chatid, command_word, args):
+def handle_command(chat_id: str, command_word: str, args: list[str]):
     match command_word:
         case "busstop":
-            busstop(chatid, args)
+            busstop(chat_id, args)
         case "help":
-            help(chatid)
+            help(chat_id)
         case "start":
-            start(chatid)
+            start(chat_id)
         case _:
             raise Exception("Invalid command 😯")
 
 
-def start(chatid):
+def start(chat_id: str):
     message = textwrap.dedent(
         """
         Welcome to SGNextBus!
@@ -31,10 +31,10 @@ def start(chatid):
         Type /help for a full list of commands and their usage
     """
     )
-    send_message(chatid, message)
+    send_message(chat_id, message)
 
 
-def help(chatid):
+def help(chat_id: str):
     message = textwrap.dedent(
         """
         <b>Commands:</b>
@@ -46,15 +46,15 @@ def help(chatid):
         Search for bus stops with names that contain the search query
     """
     )
-    send_message(chatid, message)
+    send_message(chat_id, message)
 
 
-def busstop(chatid, args):
+def busstop(chat_id: str, args: list[str]):
     if len(args) == 0:
         raise Exception("Please provide bus stop number or name")
     if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
-        send_bus_services(chatid, bus_stop_code)
+        send_bus_services(chat_id, bus_stop_code)
     else:
         # Search bus stop descriptions
         search_query = " ".join(args).lower().strip()
@@ -64,12 +64,12 @@ def busstop(chatid, args):
             if search_query in stops:
                 if len(stops[search_query]) > 1:
                     send_message_inline_keyboard_from_list(
-                        chatid,
+                        chat_id,
                         "Select bus stop:",
                         [stop["BusStopCode"] for stop in stops[search_query]],
                     )
                 else:
-                    send_bus_services(chatid, stops[search_query][0]["BusStopCode"])
+                    send_bus_services(chat_id, stops[search_query][0]["BusStopCode"])
             else:
                 search_results = []
                 # Search for descriptions that contain query
@@ -79,7 +79,7 @@ def busstop(chatid, args):
 
                 if not search_results:
                     send_message(
-                        chatid, "No bus stops found. Try another search query."
+                        chat_id, "No bus stops found. Try another search query."
                     )
                     return
 
@@ -92,11 +92,11 @@ def busstop(chatid, args):
                         }
                         inline_keyboard.append([button])
                 send_message_inline_keyboard(
-                    chatid, "Choose bus stop:", inline_keyboard
+                    chat_id, "Choose bus stop:", inline_keyboard
                 )
 
 
-def send_bus_services(chatid, bus_stop_code):
+def send_bus_services(chat_id: str, bus_stop_code: str):
     services = sorted(get_bus_services_by_code(bus_stop_code), key=lambda x: x.zfill(3))
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     inline_keyboard = []
@@ -109,10 +109,10 @@ def send_bus_services(chatid, bus_stop_code):
     message = (
         f"<b>{bus_stop_description} ({bus_stop_code})</b>\nPlease select bus service:"
     )
-    send_message_inline_keyboard(chatid, message, inline_keyboard)
+    send_message_inline_keyboard(chat_id, message, inline_keyboard)
 
 
-def handle_callback_query(data):
+def handle_callback_query(data: dict):
     chat_id = data["message"]["chat"]["id"]
     if ":" in data["data"]:
         bus_stop_code, service_no = data["data"].split(":")

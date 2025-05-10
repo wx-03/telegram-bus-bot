@@ -2,7 +2,7 @@ from .commands import handle_callback_query, handle_command
 from .messaging import send_message
 
 
-def handle_message(data):
+def handle_message(data: dict):
     if "callback_query" in data:
         chat_id = data["callback_query"]["message"]["chat"]["id"]
         try:
