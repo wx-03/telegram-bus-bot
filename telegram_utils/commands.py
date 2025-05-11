@@ -1,3 +1,4 @@
+import heapq
 import json
 import textwrap
 
@@ -9,6 +10,8 @@ from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 from .messaging import (answerCallbackQuery, send_message,
                         send_message_inline_keyboard,
                         send_message_inline_keyboard_from_list)
+
+import geopy.distance
 
 
 def handle_command(chat_id: str, command_word: str, args: list[str]):
@@ -137,3 +140,46 @@ def handle_callback_query(data: dict):
         bus_stop_code = data["data"]
         send_bus_services(chat_id, bus_stop_code)
     answerCallbackQuery(data["id"])
+
+class BusStopDistance:
+    def __init__(self, distance: float, bus_stop: dict):
+        self.distance = distance
+        self.bus_stop = bus_stop
+    
+    def __lt__(self, other):
+        return self.distance < other.distance
+    
+    def __gt__(self, other):
+        return self.distance > other.distance
+
+    def __eq__(self, other):
+        return self.distance == other.distance
+
+def handle_location(chat_id: str, latitude: str, longitude: str):
+    user_location = (float(latitude), float(longitude))
+
+    top_k_closest = get_closest_k_stops(user_location, 10)
+    inline_keyboard = []
+    for stop in top_k_closest:
+        button = {
+            "text": f"{stop['Description']} ({stop['BusStopCode']})",
+            "callback_data": stop['BusStopCode']
+        }
+        inline_keyboard.append([button])
+    send_message_inline_keyboard(chat_id, "Nearest bus stops:", inline_keyboard)
+
+def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict]:
+    stops_dist: list[BusStopDistance] = []
+    with open("storage/bus_stops.json", "r") as f:
+        bus_stops = json.load(f)
+        for stop in bus_stops:
+            bus_stop_location = (float(stop["Latitude"]), float(stop["Longitude"]))
+            dist = geopy.distance.distance(user_location, bus_stop_location)
+            stops_dist.append(BusStopDistance(dist, stop))
+    heapq.heapify(stops_dist) 
+    top_k_closest = []
+    for i in range(k):
+        top_k_closest.append(stops_dist[0].bus_stop)
+        heapq.heappop(stops_dist)
+    return top_k_closest
+
