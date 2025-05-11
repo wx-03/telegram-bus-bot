@@ -40,13 +40,16 @@ def start(chat_id: str):
 def help(chat_id: str):
     message = textwrap.dedent(
         """
-        <b>Commands:</b>
-
-        <code>/busstop {bus stop code}</code>
-        Get bus timings using bus stop code
+        <b>🚌 Get bus timings by stop code:</b>
+        <code>/busstop 12345</code>
         
-        <code>/busstop {bus stop name}</code>
-        Search for bus stops with names that contain the search query
+        <b>🔍 Get bus timings by stop name:</b>
+        <code>/busstop ang mo kio int</code>
+        • If the name isn't exact, you'll get a list of similar matches  
+        • If multiple stops have the same name, a list of codes will be shown
+
+        <b>📍 Find nearby bus stops:</b>
+        • Just send your location, and the 10 nearest stops will be shown
     """
     )
     send_message(chat_id, message)
