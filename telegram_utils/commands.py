@@ -1,5 +1,8 @@
+import heapq
 import json
 import textwrap
+
+import geopy.distance
 
 from helpers.helpers import (format_timedelta, format_timing,
                              get_bus_stop_description, get_load,
@@ -37,13 +40,16 @@ def start(chat_id: str):
 def help(chat_id: str):
     message = textwrap.dedent(
         """
-        <b>Commands:</b>
-
-        <code>/busstop {bus stop code}</code>
-        Get bus timings using bus stop code
+        <b>🚌 Get bus timings by stop code:</b>
+        <code>/busstop 12345</code>
         
-        <code>/busstop {bus stop name}</code>
-        Search for bus stops with names that contain the search query
+        <b>🔍 Get bus timings by stop name:</b>
+        <code>/busstop ang mo kio int</code>
+        • If the name isn't exact, you'll get a list of similar matches  
+        • If multiple stops have the same name, a list of codes will be shown
+
+        <b>📍 Find nearby bus stops:</b>
+        • Just send your location, and the 10 nearest stops will be shown
     """
     )
     send_message(chat_id, message)
@@ -101,8 +107,12 @@ def sort_bus_services(service: dict) -> str:
 
 
 def send_bus_services(chat_id: str, bus_stop_code: str):
-    services = sorted(get_bus_services_by_code(bus_stop_code), key=sort_bus_services)
+    services: list[str] = sorted(
+        get_bus_services_by_code(bus_stop_code), key=sort_bus_services
+    )
     bus_stop_description = get_bus_stop_description(bus_stop_code)
+    if not services:
+        raise Exception("No more bus liao :(")
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
@@ -137,3 +147,48 @@ def handle_callback_query(data: dict):
         bus_stop_code = data["data"]
         send_bus_services(chat_id, bus_stop_code)
     answerCallbackQuery(data["id"])
+
+
+class BusStopDistance:
+    def __init__(self, distance: float, bus_stop: dict):
+        self.distance = distance
+        self.bus_stop = bus_stop
+
+    def __lt__(self, other):
+        return self.distance < other.distance
+
+    def __gt__(self, other):
+        return self.distance > other.distance
+
+    def __eq__(self, other):
+        return self.distance == other.distance
+
+
+def handle_location(chat_id: str, latitude: str, longitude: str):
+    user_location = (float(latitude), float(longitude))
+
+    top_k_closest = get_closest_k_stops(user_location, 10)
+    inline_keyboard = []
+    for stop in top_k_closest:
+        button = {
+            "text": f"{stop['Description']} ({stop['BusStopCode']})",
+            "callback_data": stop["BusStopCode"],
+        }
+        inline_keyboard.append([button])
+    send_message_inline_keyboard(chat_id, "Nearest bus stops:", inline_keyboard)
+
+
+def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict]:
+    stops_dist: list[BusStopDistance] = []
+    with open("storage/bus_stops.json", "r") as f:
+        bus_stops = json.load(f)
+        for stop in bus_stops:
+            bus_stop_location = (float(stop["Latitude"]), float(stop["Longitude"]))
+            dist = geopy.distance.distance(user_location, bus_stop_location)
+            stops_dist.append(BusStopDistance(dist, stop))
+    heapq.heapify(stops_dist)
+    top_k_closest = []
+    for i in range(k):
+        top_k_closest.append(stops_dist[0].bus_stop)
+        heapq.heappop(stops_dist)
+    return top_k_closest
