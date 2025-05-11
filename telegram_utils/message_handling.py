@@ -1,4 +1,5 @@
 import json
+
 from .commands import handle_callback_query, handle_command, handle_location
 from .messaging import send_message
 
