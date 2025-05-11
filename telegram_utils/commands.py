@@ -5,11 +5,11 @@ import textwrap
 import geopy.distance
 
 from helpers.helpers import (format_timedelta, format_timing,
-                             get_bus_stop_description, get_load,
+                             get_bus_stop_description, get_bus_stop_location, get_load,
                              get_time_difference, get_type, is_bus_stop_code)
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
-from .messaging import (answerCallbackQuery, send_message,
+from .messaging import (answerCallbackQuery, send_location, send_message,
                         send_message_inline_keyboard,
                         send_message_inline_keyboard_from_list)
 
@@ -111,6 +111,8 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
         get_bus_services_by_code(bus_stop_code), key=sort_bus_services
     )
     bus_stop_description = get_bus_stop_description(bus_stop_code)
+    latitude, longitude = get_bus_stop_location(bus_stop_code)
+    send_location(chat_id, latitude, longitude)
     if not services:
         raise Exception("No more bus liao :(")
     inline_keyboard = []

@@ -41,3 +41,13 @@ def answerCallbackQuery(callback_query_id: str):
         f"{TELEGRAM_API_URL}/answerCallbackQuery",
         json={"callback_query_id": callback_query_id},
     )
+
+def send_location(chat_id: str, latitude: str, longitude: str):
+    requests.post(
+        f"{TELEGRAM_API_URL}/sendLocation",
+        json={
+            "chat_id": chat_id,
+            "longitude": longitude,
+            "latitude": latitude
+        }
+    )

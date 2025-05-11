@@ -61,3 +61,11 @@ def get_bus_stop_description(code: str) -> str:
 
 def is_bus_stop_code(str: str) -> bool:
     return str.isnumeric() and (len(str) == 5)
+
+
+def get_bus_stop_location(code: str) -> tuple[str, str]:
+    with open("storage/bus_stop_map_code.json", "r") as f:
+        bus_stops = json.load(f)
+        if not code in bus_stops:
+            raise Exception("No bus stops with this code")
+        return bus_stops[code]["Latitude"], bus_stops[code]["Longitude"]
