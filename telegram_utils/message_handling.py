@@ -19,7 +19,7 @@ def handle_message(data: dict):
 
             if message_text.startswith("/"):
                 message_text_list = (
-                    message_text.strip().split()
+                    message_text.strip().lower().split()
                 )  # Split command with whitespace as separator
                 command_word = message_text_list[0][1::]
                 args = message_text_list[1::]
