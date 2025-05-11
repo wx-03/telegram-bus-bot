@@ -107,10 +107,12 @@ def sort_bus_services(service: dict) -> str:
 
 
 def send_bus_services(chat_id: str, bus_stop_code: str):
-    services: list[str] = sorted(get_bus_services_by_code(bus_stop_code), key=sort_bus_services)
+    services: list[str] = sorted(
+        get_bus_services_by_code(bus_stop_code), key=sort_bus_services
+    )
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     if not services:
-        raise Exception('No more bus liao :(')
+        raise Exception("No more bus liao :(")
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
