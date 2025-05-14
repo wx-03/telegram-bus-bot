@@ -58,7 +58,7 @@ def help(chat_id: str):
         • If multiple stops have the same name, a list of codes will be shown
 
         <b>📍 Find nearby bus stops:</b>
-        • Just send your location, and the 10 nearest stops will be shown
+        • Just send a location, and the 10 nearest stops will be shown
     """
     )
     send_message(chat_id, message)
@@ -67,7 +67,7 @@ def help(chat_id: str):
 def busstop(chat_id: str, args: list[str]):
     if len(args) == 0:
         set_state(chat_id, State.BUSSTOP)
-        send_message(chat_id, "Please send your bus stop code or bus stop name")
+        send_message(chat_id, "Please send your bus stop code or bus stop name:")
         return
     if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
