@@ -51,9 +51,11 @@ def help(chat_id: str):
         """
         <b>🚌 Get bus timings by stop code:</b>
         <code>/busstop 12345</code>
+        • You can also type /busstop, then send the code after
         
         <b>🔍 Get bus timings by stop name:</b>
         <code>/busstop ang mo kio int</code>
+        • You can also type /busstop, then send the name after
         • If the name isn't exact, you'll get a list of similar matches  
         • If multiple stops have the same name, a list of codes will be shown
 
