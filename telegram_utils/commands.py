@@ -13,6 +13,8 @@ from .messaging import (answerCallbackQuery, send_location, send_message,
                         send_message_inline_keyboard,
                         send_message_inline_keyboard_from_list)
 
+from .state import set_state, State
+
 
 def handle_command(chat_id: str, command_word: str, args: list[str]):
     match command_word:
@@ -24,6 +26,13 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
             start(chat_id)
         case _:
             raise Exception("Invalid command 😯")
+
+def handle_state(chat_id: str, state: State, message: dict):
+    assert state != State.NONE, "state should not be none"
+    match state:
+        case state.BUSSTOP:
+            args = message["text"].lower().split(" ")
+            busstop(chat_id, args)
 
 
 def start(chat_id: str):
@@ -57,7 +66,9 @@ def help(chat_id: str):
 
 def busstop(chat_id: str, args: list[str]):
     if len(args) == 0:
-        raise Exception("Please provide bus stop number or name")
+        set_state(chat_id, State.BUSSTOP)
+        send_message(chat_id, "Please send your bus stop code or bus stop name")
+        return
     if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
         send_bus_services(chat_id, bus_stop_code)

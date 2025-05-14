@@ -1,7 +1,9 @@
 import json
 
-from .commands import handle_callback_query, handle_command, handle_location
+from .commands import handle_callback_query, handle_command, handle_location, handle_state
 from .messaging import send_message
+
+from .state import State, get_state, clear_state
 
 
 def handle_message(data: dict):
@@ -20,16 +22,24 @@ def handle_message(data: dict):
                 location = message["location"]
                 latitude = location["latitude"]
                 longitude = location["longitude"]
+                clear_state(chat_id)
                 handle_location(chat_id, latitude, longitude)
             if "text" in message:
-                message_text = message["text"]
+                message_text = message["text"].strip().lower()
 
+                # If the message is a command, clear state before handling command
                 if message_text.startswith("/"):
+                    clear_state(chat_id)
                     message_text_list = (
-                        message_text.strip().lower().split()
+                        message_text.lower().split()
                     )  # Split command with whitespace as separator
                     command_word = message_text_list[0][1::]
                     args = message_text_list[1::]
                     handle_command(chat_id, command_word, args)
+                # If the message is not a command and the bot is waiting for a reply (state not none), handle message as a reply
+                elif get_state(chat_id) != State.NONE:
+                    state = get_state(chat_id)
+                    handle_state(chat_id, state, message)
+                    clear_state(chat_id)
         except Exception as e:
             send_message(chat_id, str(e))
