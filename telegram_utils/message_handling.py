@@ -1,9 +1,9 @@
 import json
 
-from .commands import handle_callback_query, handle_command, handle_location, handle_state
+from .commands import (handle_callback_query, handle_command, handle_location,
+                       handle_state)
 from .messaging import send_message
-
-from .state import State, get_state, clear_state
+from .state import State, clear_state, get_state
 
 
 def handle_message(data: dict):

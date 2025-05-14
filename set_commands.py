@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 import requests
 from dotenv import load_dotenv
@@ -12,8 +12,6 @@ with open("storage/bot_commands.json") as f:
     commands = json.load(f)
     response = requests.post(
         f"https://api.telegram.org/bot{BOT_TOKEN}/setMyCommands",
-        params={
-            "commands": json.dumps(commands)
-        },
+        params={"commands": json.dumps(commands)},
     )
     print(response)

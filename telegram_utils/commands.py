@@ -5,15 +5,15 @@ import textwrap
 import geopy.distance
 
 from helpers.helpers import (format_timedelta, format_timing,
-                             get_bus_stop_description, get_bus_stop_location, get_load,
-                             get_time_difference, get_type, is_bus_stop_code)
+                             get_bus_stop_description, get_bus_stop_location,
+                             get_load, get_time_difference, get_type,
+                             is_bus_stop_code)
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
 from .messaging import (answerCallbackQuery, send_location, send_message,
                         send_message_inline_keyboard,
                         send_message_inline_keyboard_from_list)
-
-from .state import set_state, State
+from .state import State, set_state
 
 
 def handle_command(chat_id: str, command_word: str, args: list[str]):
@@ -26,6 +26,7 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
             start(chat_id)
         case _:
             raise Exception("Invalid command 😯")
+
 
 def handle_state(chat_id: str, state: State, message: dict):
     assert state != State.NONE, "state should not be none"
