@@ -38960,6 +38960,15 @@
             "Longitude": 103.955554
         }
     ],
+    "opp blk 124": [
+        {
+            "BusStopCode": "76321",
+            "RoadName": "Tampines St 11",
+            "Description": "Opp Blk 124",
+            "Latitude": 1.345967,
+            "Longitude": 103.949073
+        }
+    ],
     "opp tampines changkat cc": [
         {
             "BusStopCode": "76339",
@@ -39120,6 +39129,15 @@
             "Description": "BLK 444",
             "Latitude": 1.35855302099722,
             "Longitude": 103.95134500001934
+        }
+    ],
+    "blk 136": [
+        {
+            "BusStopCode": "76481",
+            "RoadName": "Tampines Lane",
+            "Description": "Blk 136",
+            "Latitude": 1.3448265,
+            "Longitude": 103.945919
         }
     ],
     "the tampines trilliant": [
