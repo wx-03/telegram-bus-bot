@@ -1,0 +1,10 @@
+[
+    {
+        "command": "/help",
+        "description": "Show a list of commands and their usage"
+    },
+    {
+        "command": "/busstop",
+        "description": "Get bus timings for a bus stop"
+    }
+]
