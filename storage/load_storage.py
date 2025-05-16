@@ -1,4 +1,7 @@
-import load_bus_routes, load_bus_services, load_stops, create_maps
+import create_maps
+import load_bus_routes
+import load_bus_services
+import load_stops
 
 load_bus_routes.main()
 print("Loaded bus routes in bus_routes.json")

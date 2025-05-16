@@ -1,5 +1,6 @@
 import json
 
+
 def main():
     with open("bus_stops.json", "r") as json_file:
         bus_stops = json.load(json_file)
@@ -32,6 +33,7 @@ def main():
                 else:
                     dict[key].append(info)
             json.dump(dict, f, indent=4)
+
 
 if __name__ == "__main__":
     main()

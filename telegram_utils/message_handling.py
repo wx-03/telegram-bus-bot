@@ -1,9 +1,11 @@
-import json
+import logging
 
 from .commands import (handle_callback_query, handle_command, handle_location,
                        handle_state)
 from .messaging import send_message
 from .state import State, clear_state, get_state
+
+logger = logging.getLogger(__name__)
 
 
 def handle_message(data: dict):
@@ -13,6 +15,7 @@ def handle_message(data: dict):
             handle_callback_query(data["callback_query"])
         except Exception as e:
             send_message(chat_id, str(e))
+            logging.exception(e)
 
     if "message" in data:
         message = data["message"]
@@ -43,3 +46,4 @@ def handle_message(data: dict):
                     clear_state(chat_id)
         except Exception as e:
             send_message(chat_id, str(e))
+            logging.exception(e)

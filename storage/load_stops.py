@@ -4,7 +4,8 @@ import os
 import dotenv
 import requests
 
-def main(): 
+
+def main():
     dotenv.load_dotenv()
     API_KEY = os.getenv("API_KEY")
     URL = "https://datamall2.mytransport.sg/ltaodataservice/BusStops"
@@ -22,6 +23,7 @@ def main():
 
     with open("./bus_stops.json", "w") as f:
         json.dump(all_stops, f, indent=4)
+
 
 if __name__ == "__main__":
     main()

@@ -53,8 +53,5 @@ def send_location(chat_id: str, latitude: str, longitude: str):
 def typing(chat_id: str):
     requests.post(
         f"{TELEGRAM_API_URL}/sendChatAction",
-        json={
-            "chat_id": chat_id,
-            "action": "typing"
-        }
+        json={"chat_id": chat_id, "action": "typing"},
     )

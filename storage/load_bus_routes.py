@@ -4,6 +4,7 @@ import os
 import dotenv
 import requests
 
+
 def main():
     dotenv.load_dotenv()
     API_KEY = os.getenv("API_KEY")
@@ -17,21 +18,25 @@ def main():
         for stop in data:
             bus_stop_dict = {
                 "StopSequence": stop["StopSequence"],
-                "BusStopCode": stop["BusStopCode"]
+                "BusStopCode": stop["BusStopCode"],
             }
             service_number = stop["ServiceNo"]
             if not service_number in all_services:
                 all_services[service_number.lower()] = {
                     "ServiceNo": service_number,
-                    stop["Direction"]: [bus_stop_dict]
+                    stop["Direction"]: [bus_stop_dict],
                 }
             else:
                 if stop["Direction"] in all_services[service_number.lower()]:
                     # Append stop to current list
-                    all_services[service_number.lower()][stop["Direction"]].append(bus_stop_dict)
+                    all_services[service_number.lower()][stop["Direction"]].append(
+                        bus_stop_dict
+                    )
                 else:
                     # Create new direction for bus service
-                    all_services[service_number.lower()][stop["Direction"]] = [bus_stop_dict]
+                    all_services[service_number.lower()][stop["Direction"]] = [
+                        bus_stop_dict
+                    ]
 
     while True:
         response = requests.request("GET", f"{URL}?$skip={i * 500}", headers=headers)
@@ -41,10 +46,9 @@ def main():
         process_data(data)
         i += 1
 
-        
-
     with open("./bus_routes.json", "w") as f:
         json.dump(all_services, f, indent=4)
+
 
 if __name__ == "__main__":
     main()
