@@ -12,7 +12,7 @@ from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
 from .messaging import (answerCallbackQuery, send_location, send_message,
                         send_message_inline_keyboard,
-                        send_message_inline_keyboard_from_list)
+                        send_message_inline_keyboard_from_list, typing)
 from .state import State, set_state
 
 
@@ -181,6 +181,7 @@ class BusStopDistance:
 
 
 def handle_location(chat_id: str, latitude: str, longitude: str):
+    typing(chat_id)
     user_location = (float(latitude), float(longitude))
 
     top_k_closest = get_closest_k_stops(user_location, 10)
