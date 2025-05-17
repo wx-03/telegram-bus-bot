@@ -4,7 +4,7 @@ import textwrap
 
 import geopy.distance
 
-from helpers.helpers import (format_timedelta, format_timing,
+from helpers.helpers import (format_timedelta, format_timing, get_bus_directions,
                              get_bus_stop_description, get_bus_stop_location,
                              get_load, get_time_difference, get_type,
                              is_bus_stop_code)
@@ -15,6 +15,10 @@ from .messaging import (answerCallbackQuery, send_location, send_message,
                         send_message_inline_keyboard_from_list, typing)
 from .state import State, set_state
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 def handle_command(chat_id: str, command_word: str, args: list[str]):
     match command_word:
@@ -24,6 +28,8 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
             help(chat_id)
         case "start":
             start(chat_id)
+        case "bus": 
+            bus(chat_id, args)
         case _:
             raise Exception("Invalid command 😯")
 
@@ -34,6 +40,9 @@ def handle_state(chat_id: str, state: State, message: dict):
         case state.BUSSTOP:
             args = message["text"].lower().split(" ")
             busstop(chat_id, args)
+        case state.BUS:
+            args = message["text"].lower().split(" ")
+            bus(chat_id, args)
 
 
 def start(chat_id: str):
@@ -159,9 +168,11 @@ def handle_callback_query(data: dict):
                 f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
             )
         send_message(chat_id, message)
-    elif data["data"].isnumeric():
+    elif is_bus_stop_code(data["data"]):
         bus_stop_code = data["data"]
         send_bus_services(chat_id, bus_stop_code)
+    else:
+        raise Exception("invalid callback data")
     answerCallbackQuery(data["id"])
 
 
@@ -209,3 +220,19 @@ def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict
         top_k_closest.append(stops_dist[0].bus_stop)
         heapq.heappop(stops_dist)
     return top_k_closest
+
+def bus(chat_id: str, args: list[str]):
+    if (len(args) == 0):
+        set_state(chat_id, State.BUS)
+        send_message(chat_id, "Please send bus service number:")
+        return
+    bus_number = args[0]
+    directions = get_bus_directions(bus_number)
+    inline_keyboard = []
+    for direction in directions:
+        button = {
+            "text": f"To {get_bus_stop_description(direction["DestinationCode"])}",
+            "callback_data": f"{bus_number}|{direction["Direction"]}"
+        }
+        inline_keyboard.append([button])
+    send_message_inline_keyboard(chat_id, "Please select direction:", inline_keyboard)

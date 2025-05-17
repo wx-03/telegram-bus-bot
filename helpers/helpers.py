@@ -69,3 +69,9 @@ def get_bus_stop_location(code: str) -> tuple[str, str]:
         if not code in bus_stops:
             raise Exception("No bus stops with this code")
         return bus_stops[code]["Latitude"], bus_stops[code]["Longitude"]
+
+def get_bus_directions(service_no: str) -> list[dict]:
+    with open("storage/bus_services.json", "r") as f:
+        bus_services = json.load(f)
+        return bus_services[service_no]["Directions"]
+

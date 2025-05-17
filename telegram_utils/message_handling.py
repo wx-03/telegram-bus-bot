@@ -15,7 +15,7 @@ def handle_message(data: dict):
             handle_callback_query(data["callback_query"])
         except Exception as e:
             send_message(chat_id, str(e))
-            logging.exception(e)
+            logging.error(str(e), exc_info=True)
 
     if "message" in data:
         message = data["message"]
@@ -27,7 +27,7 @@ def handle_message(data: dict):
                 longitude = location["longitude"]
                 clear_state(chat_id)
                 handle_location(chat_id, latitude, longitude)
-            if "text" in message:
+            elif "text" in message:
                 message_text = message["text"].strip().lower()
 
                 # If the message is a command, clear state before handling command
@@ -46,4 +46,4 @@ def handle_message(data: dict):
                     clear_state(chat_id)
         except Exception as e:
             send_message(chat_id, str(e))
-            logging.exception(e)
+            logging.error(str(e), exc_info=True)
