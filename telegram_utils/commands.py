@@ -269,7 +269,7 @@ def bus(chat_id: str, args: list[str]):
     for direction in directions:
         button = {
             "text": f"To {get_bus_stop_description(direction['DestinationCode'])}",
-            "callback_data": f"{bus_number}|{direction["Direction"]}",
+            "callback_data": f"{bus_number}|{direction['Direction']}",
         }
         inline_keyboard.append([button])
     send_message_inline_keyboard(chat_id, "Please select direction:", inline_keyboard)
