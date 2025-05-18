@@ -70,6 +70,7 @@ def get_bus_stop_location(code: str) -> tuple[str, str]:
             raise Exception("No bus stops with this code")
         return bus_stops[code]["Latitude"], bus_stops[code]["Longitude"]
 
+
 def get_bus_directions(service_no: str) -> list[dict]:
     with open("storage/bus_services.json", "r") as f:
         bus_services = json.load(f)
@@ -81,6 +82,10 @@ def get_bus_directions(service_no: str) -> list[dict]:
 def get_bus_route(service_no: str, direction: str) -> list[str]:
     with open("storage/bus_routes.json", "r") as f:
         bus_routes = json.load(f)
-        stops = [stop["BusStopCode"] for stop in sorted(bus_routes[service_no][direction], key=lambda x: x["StopSequence"])]
+        stops = [
+            stop["BusStopCode"]
+            for stop in sorted(
+                bus_routes[service_no][direction], key=lambda x: x["StopSequence"]
+            )
+        ]
         return stops
-

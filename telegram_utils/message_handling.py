@@ -1,7 +1,11 @@
 import logging
 
-from .commands import (handle_callback_query, handle_command, handle_location,
-                       handle_state)
+from .commands import (
+    handle_callback_query,
+    handle_command,
+    handle_location,
+    handle_state,
+)
 from .messaging import send_message
 from .state import State, clear_state, get_state
 

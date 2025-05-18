@@ -17,7 +17,7 @@ def main():
                 "AM_Peak_Freq": service["AM_Peak_Freq"],
                 "AM_Offpeak_Freq": service["AM_Offpeak_Freq"],
                 "PM_Peak_Freq": service["PM_Peak_Freq"],
-                "PM_Offpeak_Freq": service["PM_Offpeak_Freq"]
+                "PM_Offpeak_Freq": service["PM_Offpeak_Freq"],
             }
             if lowercase_service_no in all_services:
                 all_services[lowercase_service_no]["Directions"].append(direction_info)
@@ -25,7 +25,7 @@ def main():
                 all_services[lowercase_service_no] = {
                     "ServiceNo": service["ServiceNo"],
                     "Operator": service["Operator"],
-                    "Directions": [direction_info]
+                    "Directions": [direction_info],
                 }
 
     dotenv.load_dotenv()

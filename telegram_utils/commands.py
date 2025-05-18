@@ -1,21 +1,33 @@
 import heapq
 import json
+import logging
 import textwrap
 
 import geopy.distance
 
-from helpers.helpers import (format_timedelta, format_timing, get_bus_directions, get_bus_route,
-                             get_bus_stop_description, get_bus_stop_location,
-                             get_load, get_time_difference, get_type,
-                             is_bus_stop_code)
+from helpers.helpers import (
+    format_timedelta,
+    format_timing,
+    get_bus_directions,
+    get_bus_route,
+    get_bus_stop_description,
+    get_bus_stop_location,
+    get_load,
+    get_time_difference,
+    get_type,
+    is_bus_stop_code,
+)
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
-from .messaging import (answerCallbackQuery, send_location, send_message,
-                        send_message_inline_keyboard,
-                        send_message_inline_keyboard_from_list, typing)
+from .messaging import (
+    answerCallbackQuery,
+    send_location,
+    send_message,
+    send_message_inline_keyboard,
+    send_message_inline_keyboard_from_list,
+    typing,
+)
 from .state import State, set_state
-
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +40,7 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
             help(chat_id)
         case "start":
             start(chat_id)
-        case "bus": 
+        case "bus":
             bus(chat_id, args)
         case _:
             raise Exception("Invalid command 😯")
@@ -149,6 +161,7 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
     )
     send_message_inline_keyboard(chat_id, message, inline_keyboard)
 
+
 def send_bus_stop_location(chat_id, bus_stop_code):
     latitude, longitude = get_bus_stop_location(bus_stop_code)
     send_location(chat_id, latitude, longitude)
@@ -165,20 +178,21 @@ def handle_callback_query(data: dict):
     elif is_bus_stop_code(data["data"]):
         bus_stop_code = data["data"]
         send_bus_services(chat_id, bus_stop_code)
-    elif '|' in data["data"]:
+    elif "|" in data["data"]:
         service_no, direction = callback_data.split("|")
         bus_stop_codes = get_bus_route(service_no, direction)
         inline_keyboard = []
         for code in bus_stop_codes:
             button = {
                 "text": get_bus_stop_description(code),
-                "callback_data": f"{code}:{service_no}:1"
+                "callback_data": f"{code}:{service_no}:1",
             }
             inline_keyboard.append([button])
         send_message_inline_keyboard(chat_id, "Choose bus stop: ", inline_keyboard)
     else:
         raise Exception("invalid callback data")
     answerCallbackQuery(data["id"])
+
 
 def send_bus_timings(chat_id, bus_stop_code, service_no):
     arrivals = get_bus_timing(bus_stop_code, service_no)
@@ -190,9 +204,7 @@ def send_bus_timings(chat_id, bus_stop_code, service_no):
             continue
         load = get_load(arrival["Load"])
         type = get_type(arrival["Type"])
-        message += (
-                f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
-            )
+        message += f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
     send_message(chat_id, message)
 
 
@@ -241,8 +253,9 @@ def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict
         heapq.heappop(stops_dist)
     return top_k_closest
 
+
 def bus(chat_id: str, args: list[str]):
-    if (len(args) == 0):
+    if len(args) == 0:
         set_state(chat_id, State.BUS)
         send_message(chat_id, "Please send bus service number:")
         return
@@ -252,7 +265,7 @@ def bus(chat_id: str, args: list[str]):
     for direction in directions:
         button = {
             "text": f"To {get_bus_stop_description(direction["DestinationCode"])}",
-            "callback_data": f"{bus_number}|{direction["Direction"]}"
+            "callback_data": f"{bus_number}|{direction["Direction"]}",
         }
         inline_keyboard.append([button])
     send_message_inline_keyboard(chat_id, "Please select direction:", inline_keyboard)
