@@ -81,6 +81,10 @@ def help(chat_id: str):
         • If the name isn't exact, you'll get a list of similar matches  
         • If multiple stops have the same name, a list of codes will be shown
 
+        <b>🚍 Get bus timings by bus service number:</b>
+        <code>/bus 123</code>
+        • You can also type /bus, then send the service number after
+
         <b>📍 Find nearby bus stops:</b>
         • Just send a location, and the 10 nearest stops will be shown
     """
@@ -264,7 +268,7 @@ def bus(chat_id: str, args: list[str]):
     inline_keyboard = []
     for direction in directions:
         button = {
-            "text": f"To {get_bus_stop_description(direction["DestinationCode"])}",
+            "text": f"To {get_bus_stop_description(direction['DestinationCode'])}",
             "callback_data": f"{bus_number}|{direction["Direction"]}",
         }
         inline_keyboard.append([button])

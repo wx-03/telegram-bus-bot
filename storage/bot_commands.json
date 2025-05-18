@@ -6,5 +6,9 @@
     {
         "command": "/busstop",
         "description": "Get bus timings for a bus stop"
+    },
+    {
+        "command": "/bus",
+        "description": "Get bus timings from bus route"
     }
 ]
