@@ -20,21 +20,22 @@ def main():
                 "StopSequence": stop["StopSequence"],
                 "BusStopCode": stop["BusStopCode"],
             }
+            direction_string = str(stop["Direction"])
             service_number = stop["ServiceNo"]
-            if not service_number in all_services:
+            if not service_number.lower() in all_services:
                 all_services[service_number.lower()] = {
                     "ServiceNo": service_number,
-                    stop["Direction"]: [bus_stop_dict],
+                    direction_string: [bus_stop_dict],
                 }
             else:
-                if stop["Direction"] in all_services[service_number.lower()]:
+                if direction_string in all_services[service_number.lower()]:
                     # Append stop to current list
-                    all_services[service_number.lower()][stop["Direction"]].append(
+                    all_services[service_number.lower()][direction_string].append(
                         bus_stop_dict
                     )
                 else:
                     # Create new direction for bus service
-                    all_services[service_number.lower()][stop["Direction"]] = [
+                    all_services[service_number.lower()][direction_string] = [
                         bus_stop_dict
                     ]
 
