@@ -6,6 +6,7 @@ chat_states = {}
 class State(Enum):
     NONE = "none"
     BUSSTOP = "busstop"
+    BUS = "bus"
 
 
 def set_state(chat_id: str, state: State):

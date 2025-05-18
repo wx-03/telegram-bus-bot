@@ -1,6 +1,10 @@
+import logging
+
 from flask import Flask, request
 
 from telegram_utils.message_handling import handle_message
+
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -18,4 +22,5 @@ def webhook():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename="bot.log", filemode="w", level=logging.DEBUG)
     app.run(debug=True)
