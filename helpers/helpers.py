@@ -84,6 +84,10 @@ def get_bus_directions(service_no: str) -> list[dict]:
 def get_bus_route(service_no: str, direction: str) -> list[str]:
     with open("storage/bus_routes.json", "r") as f:
         bus_routes = json.load(f)
+        if not service_no in bus_routes:
+            raise NoSearchResultsError("No buses with this service number")
+        if not direction in bus_routes[service_no]:
+            raise NoSearchResultsError(f"No such direction for bus {service_no}")
         stops = [
             stop["BusStopCode"]
             for stop in sorted(
