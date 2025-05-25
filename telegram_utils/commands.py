@@ -5,6 +5,12 @@ import textwrap
 
 import geopy.distance
 
+from exceptions.exceptions import (
+    InvalidCallbackDataError,
+    InvalidCommandError,
+    NoMoreBusError,
+    NoSearchResultsError,
+)
 from helpers.helpers import (
     format_timedelta,
     format_timing,
@@ -43,7 +49,7 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
         case "bus":
             bus(chat_id, args)
         case _:
-            raise Exception("Invalid command 😯")
+            raise InvalidCommandError()
 
 
 def handle_state(chat_id: str, state: State, message: dict):
@@ -99,7 +105,11 @@ def busstop(chat_id: str, args: list[str]):
         return
     if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
-        send_bus_services(chat_id, bus_stop_code)
+        try:
+            send_bus_services(chat_id, bus_stop_code)
+        except (NoSearchResultsError, NoMoreBusError) as e:
+            send_message(chat_id, str(e))
+            return
     else:
         # Search bus stop descriptions
         search_query = " ".join(args).lower().strip()
@@ -152,7 +162,7 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     send_bus_stop_location(chat_id, bus_stop_code)
     if not services:
-        raise Exception("No more bus liao :(")
+        raise NoMoreBusError()
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
@@ -194,7 +204,7 @@ def handle_callback_query(data: dict):
             inline_keyboard.append([button])
         send_message_inline_keyboard(chat_id, "Choose bus stop: ", inline_keyboard)
     else:
-        raise Exception("invalid callback data")
+        raise InvalidCallbackDataError()
     answerCallbackQuery(data["id"])
 
 

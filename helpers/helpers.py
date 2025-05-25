@@ -1,6 +1,8 @@
 import json
 from datetime import datetime, timedelta, timezone
 
+from exceptions.exceptions import NoSearchResultsError
+
 
 def format_timing(str: str) -> str:
     if str == "":
@@ -55,7 +57,7 @@ def get_bus_stop_description(code: str) -> str:
     with open("storage/bus_stop_map_code.json", "r") as f:
         bus_stops = json.load(f)
         if not code in bus_stops:
-            raise Exception("No bus stops with this code")
+            raise NoSearchResultsError("No bus stops with this code")
         return bus_stops[code]["Description"]
 
 
@@ -67,7 +69,7 @@ def get_bus_stop_location(code: str) -> tuple[str, str]:
     with open("storage/bus_stop_map_code.json", "r") as f:
         bus_stops = json.load(f)
         if not code in bus_stops:
-            raise Exception("No bus stops with this code")
+            raise NoSearchResultsError("No bus stops with this code")
         return bus_stops[code]["Latitude"], bus_stops[code]["Longitude"]
 
 
@@ -75,7 +77,7 @@ def get_bus_directions(service_no: str) -> list[dict]:
     with open("storage/bus_services.json", "r") as f:
         bus_services = json.load(f)
         if not service_no in bus_services:
-            raise Exception("No buses with this service number")
+            raise NoSearchResultsError("No buses with this service number")
         return bus_services[service_no]["Directions"]
 
 
