@@ -22,6 +22,7 @@ from helpers.helpers import (
     get_time_difference,
     get_type,
     is_bus_stop_code,
+    search_bus_stop_descriptions,
 )
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
@@ -115,31 +116,10 @@ def busstop(chat_id: str, args: list[str]):
         search_query = " ".join(args).lower().strip()
         with open("storage/bus_stop_map_description.json", "r") as f:
             stops = json.load(f)
-            # If there is an exact match
-            if search_query in stops:
-                if len(stops[search_query]) > 1:
-                    send_message_inline_keyboard_from_list(
-                        chat_id,
-                        "Select bus stop:",
-                        [stop["BusStopCode"] for stop in stops[search_query]],
-                    )
-                else:
-                    send_bus_services(chat_id, stops[search_query][0]["BusStopCode"])
-            else:
-                search_results = []
-                # Search for descriptions that contain query
-                for stop in stops:
-                    if search_query in stop:
-                        search_results.append(stops[stop])
-
-                if not search_results:
-                    send_message(
-                        chat_id, "No bus stops found. Try another search query."
-                    )
-                    return
-
+            try:
+                results = search_bus_stop_descriptions(search_query)
                 inline_keyboard = []
-                for result in search_results:
+                for result in results:
                     for bus_stop in result:
                         button = {
                             "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
@@ -149,6 +129,8 @@ def busstop(chat_id: str, args: list[str]):
                 send_message_inline_keyboard(
                     chat_id, "Choose bus stop:", inline_keyboard
                 )
+            except NoSearchResultsError as e:
+                send_message(chat_id, str(e))
 
 
 def sort_bus_services(service: dict) -> str:

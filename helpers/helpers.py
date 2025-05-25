@@ -91,3 +91,15 @@ def get_bus_route(service_no: str, direction: str) -> list[str]:
             )
         ]
         return stops
+
+
+def search_bus_stop_descriptions(query: str) -> list:
+    search_results = []
+    with open("storage/bus_stop_map_description.json", "r") as f:
+        stops = json.load(f)
+        for stop in stops:
+            if query in stop:
+                search_results.append(stops[stop])
+    if not search_results:
+        raise NoSearchResultsError("No bus stops found. Try another search query.")
+    return search_results
