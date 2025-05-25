@@ -114,23 +114,19 @@ def busstop(chat_id: str, args: list[str]):
     else:
         # Search bus stop descriptions
         search_query = " ".join(args).lower().strip()
-        with open("storage/bus_stop_map_description.json", "r") as f:
-            stops = json.load(f)
-            try:
-                results = search_bus_stop_descriptions(search_query)
-                inline_keyboard = []
-                for result in results:
-                    for bus_stop in result:
-                        button = {
-                            "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
-                            "callback_data": bus_stop["BusStopCode"],
-                        }
-                        inline_keyboard.append([button])
-                send_message_inline_keyboard(
-                    chat_id, "Choose bus stop:", inline_keyboard
-                )
-            except NoSearchResultsError as e:
-                send_message(chat_id, str(e))
+        try:
+            results = search_bus_stop_descriptions(search_query)
+            inline_keyboard = []
+            for result in results:
+                for bus_stop in result:
+                    button = {
+                        "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
+                        "callback_data": bus_stop["BusStopCode"],
+                    }
+                    inline_keyboard.append([button])
+            send_message_inline_keyboard(chat_id, "Choose bus stop:", inline_keyboard)
+        except NoSearchResultsError as e:
+            send_message(chat_id, str(e))
 
 
 def sort_bus_services(service: dict) -> str:
