@@ -110,7 +110,7 @@ def busstop(chat_id: str, args: list[str]):
         bus_stop_code = args[0]
         try:
             send_bus_services(chat_id, bus_stop_code)
-        except (NoSearchResultsError, NoMoreBusError) as e:
+        except (NoSearchResultsError, NoMoreBusError, APIError) as e:
             handle_error(e, chat_id)
             return
     else:
@@ -136,6 +136,16 @@ def sort_bus_services(service: dict) -> str:
 
 
 def send_bus_services(chat_id: str, bus_stop_code: str):
+    """_summary_
+
+    Args:
+        chat_id (str): _description_
+        bus_stop_code (str): _description_
+
+    Raises:
+        NoMoreBusError: _description_
+        APIError: _description_
+    """
     services: list[str] = sorted(
         get_bus_services_by_code(bus_stop_code), key=sort_bus_services
     )
@@ -176,7 +186,7 @@ def handle_callback_query(data: dict):
         bus_stop_code = data["data"]
         try:
             send_bus_services(chat_id, bus_stop_code)
-        except NoSearchResultsError as e:
+        except (NoSearchResultsError, NoMoreBusError) as e:
             handle_error(e, chat_id)
     elif "|" in data["data"]:
         try:
