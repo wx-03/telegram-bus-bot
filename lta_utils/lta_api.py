@@ -3,6 +3,8 @@ import os
 import requests
 from dotenv import load_dotenv
 
+from exceptions.exceptions import APIError, NoMoreBusError
+
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
@@ -13,7 +15,7 @@ def get_bus_services_by_code(code: str) -> list[str]:
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}", headers=HEADERS)
     if res.status_code != 200:
-        raise Exception(f"Error occurred. Response status code: {res.status_code}")
+        raise APIError(res.status_code)
     if not "Services" in res.json():
         return []
     services = res.json()["Services"]
@@ -33,11 +35,11 @@ def get_bus_timing(code: str, service: str) -> list[dict]:
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}&ServiceNo={service}", headers=HEADERS)
     if res.status_code != 200:
-        raise Exception(f"Error occurred. Resposnse status code: {res.status_code}")
+        raise APIError(res.status_code)
     if not "Services" in res.json():
-        raise Exception("No more bus liao :(")
+        raise NoMoreBusError()
     if res.json()["Services"] == []:
-        raise Exception("No more bus liao :(")
+        raise NoMoreBusError()
     data = res.json()["Services"][0]
     arrivals = [data["NextBus"], data["NextBus2"], data["NextBus3"]]
     return arrivals

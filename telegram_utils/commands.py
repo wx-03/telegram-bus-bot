@@ -5,6 +5,14 @@ import textwrap
 
 import geopy.distance
 
+from exceptions.error_handling import handle_error
+from exceptions.exceptions import (
+    APIError,
+    InvalidCallbackDataError,
+    InvalidCommandError,
+    NoMoreBusError,
+    NoSearchResultsError,
+)
 from helpers.helpers import (
     format_timedelta,
     format_timing,
@@ -16,6 +24,7 @@ from helpers.helpers import (
     get_time_difference,
     get_type,
     is_bus_stop_code,
+    search_bus_stop_descriptions,
 )
 from lta_utils.lta_api import get_bus_services_by_code, get_bus_timing
 
@@ -43,7 +52,7 @@ def handle_command(chat_id: str, command_word: str, args: list[str]):
         case "bus":
             bus(chat_id, args)
         case _:
-            raise Exception("Invalid command 😯")
+            raise InvalidCommandError()
 
 
 def handle_state(chat_id: str, state: State, message: dict):
@@ -99,46 +108,27 @@ def busstop(chat_id: str, args: list[str]):
         return
     if len(args) == 1 and is_bus_stop_code(args[0]):
         bus_stop_code = args[0]
-        send_bus_services(chat_id, bus_stop_code)
+        try:
+            send_bus_services(chat_id, bus_stop_code)
+        except (NoSearchResultsError, NoMoreBusError, APIError) as e:
+            handle_error(e, chat_id)
+            return
     else:
         # Search bus stop descriptions
         search_query = " ".join(args).lower().strip()
-        with open("storage/bus_stop_map_description.json", "r") as f:
-            stops = json.load(f)
-            # If there is an exact match
-            if search_query in stops:
-                if len(stops[search_query]) > 1:
-                    send_message_inline_keyboard_from_list(
-                        chat_id,
-                        "Select bus stop:",
-                        [stop["BusStopCode"] for stop in stops[search_query]],
-                    )
-                else:
-                    send_bus_services(chat_id, stops[search_query][0]["BusStopCode"])
-            else:
-                search_results = []
-                # Search for descriptions that contain query
-                for stop in stops:
-                    if search_query in stop:
-                        search_results.append(stops[stop])
-
-                if not search_results:
-                    send_message(
-                        chat_id, "No bus stops found. Try another search query."
-                    )
-                    return
-
-                inline_keyboard = []
-                for result in search_results:
-                    for bus_stop in result:
-                        button = {
-                            "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
-                            "callback_data": bus_stop["BusStopCode"],
-                        }
-                        inline_keyboard.append([button])
-                send_message_inline_keyboard(
-                    chat_id, "Choose bus stop:", inline_keyboard
-                )
+        try:
+            results = search_bus_stop_descriptions(search_query)
+            inline_keyboard = []
+            for result in results:
+                for bus_stop in result:
+                    button = {
+                        "text": f"{bus_stop['Description']} ({bus_stop['BusStopCode']})",
+                        "callback_data": bus_stop["BusStopCode"],
+                    }
+                    inline_keyboard.append([button])
+            send_message_inline_keyboard(chat_id, "Choose bus stop:", inline_keyboard)
+        except NoSearchResultsError as e:
+            handle_error(e, chat_id)
 
 
 def sort_bus_services(service: dict) -> str:
@@ -146,13 +136,23 @@ def sort_bus_services(service: dict) -> str:
 
 
 def send_bus_services(chat_id: str, bus_stop_code: str):
+    """_summary_
+
+    Args:
+        chat_id (str): _description_
+        bus_stop_code (str): _description_
+
+    Raises:
+        NoMoreBusError: _description_
+        APIError: _description_
+    """
     services: list[str] = sorted(
         get_bus_services_by_code(bus_stop_code), key=sort_bus_services
     )
     bus_stop_description = get_bus_stop_description(bus_stop_code)
     send_bus_stop_location(chat_id, bus_stop_code)
     if not services:
-        raise Exception("No more bus liao :(")
+        raise NoMoreBusError()
     inline_keyboard = []
     for service in services:
         inline_keyboard_button = {
@@ -167,8 +167,11 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
 
 
 def send_bus_stop_location(chat_id, bus_stop_code):
-    latitude, longitude = get_bus_stop_location(bus_stop_code)
-    send_location(chat_id, latitude, longitude)
+    try:
+        latitude, longitude = get_bus_stop_location(bus_stop_code)
+        send_location(chat_id, latitude, longitude)
+    except NoSearchResultsError as e:
+        handle_error(e, chat_id)
 
 
 def handle_callback_query(data: dict):
@@ -181,35 +184,46 @@ def handle_callback_query(data: dict):
         send_bus_timings(chat_id, bus_stop_code, service_no)
     elif is_bus_stop_code(data["data"]):
         bus_stop_code = data["data"]
-        send_bus_services(chat_id, bus_stop_code)
+        try:
+            send_bus_services(chat_id, bus_stop_code)
+        except (NoSearchResultsError, NoMoreBusError) as e:
+            handle_error(e, chat_id)
     elif "|" in data["data"]:
-        service_no, direction = callback_data.split("|")
-        bus_stop_codes = get_bus_route(service_no, direction)
-        inline_keyboard = []
-        for code in bus_stop_codes:
-            button = {
-                "text": get_bus_stop_description(code),
-                "callback_data": f"{code}:{service_no}:1",
-            }
-            inline_keyboard.append([button])
-        send_message_inline_keyboard(chat_id, "Choose bus stop: ", inline_keyboard)
+        try:
+            service_no, direction = callback_data.split("|")
+            bus_stop_codes = get_bus_route(service_no, direction)
+            inline_keyboard = []
+            for code in bus_stop_codes:
+                button = {
+                    "text": get_bus_stop_description(code),
+                    "callback_data": f"{code}:{service_no}:1",
+                }
+                inline_keyboard.append([button])
+            send_message_inline_keyboard(chat_id, "Choose bus stop: ", inline_keyboard)
+        except NoSearchResultsError as e:
+            handle_error(e, chat_id)
     else:
-        raise Exception("invalid callback data")
+        raise InvalidCallbackDataError()
     answerCallbackQuery(data["id"])
 
 
-def send_bus_timings(chat_id, bus_stop_code, service_no):
-    arrivals = get_bus_timing(bus_stop_code, service_no)
-    message = f"<b>{get_bus_stop_description(bus_stop_code)} ({bus_stop_code})\nBus {service_no}</b>\n\n"
-    for arrival in arrivals:
-        duration = get_time_difference(arrival["EstimatedArrival"])
-        timing = format_timing(arrival["EstimatedArrival"])
-        if timing == "":
-            continue
-        load = get_load(arrival["Load"])
-        type = get_type(arrival["Type"])
-        message += f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
-    send_message(chat_id, message)
+def send_bus_timings(chat_id: str, bus_stop_code: str, service_no: str):
+    try:
+        arrivals = get_bus_timing(bus_stop_code, service_no)
+        message = f"<b>{get_bus_stop_description(bus_stop_code)} ({bus_stop_code})\nBus {service_no}</b>\n\n"
+        for arrival in arrivals:
+            duration = get_time_difference(arrival["EstimatedArrival"])
+            timing = format_timing(arrival["EstimatedArrival"])
+            if timing == "":
+                continue
+            load = get_load(arrival["Load"])
+            type = get_type(arrival["Type"])
+            message += (
+                f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
+            )
+        send_message(chat_id, message)
+    except (APIError, NoMoreBusError, NoSearchResultsError) as e:
+        handle_error(e, chat_id)
 
 
 class BusStopDistance:
@@ -264,12 +278,17 @@ def bus(chat_id: str, args: list[str]):
         send_message(chat_id, "Please send bus service number:")
         return
     bus_number = args[0]
-    directions = get_bus_directions(bus_number)
-    inline_keyboard = []
-    for direction in directions:
-        button = {
-            "text": f"To {get_bus_stop_description(direction['DestinationCode'])}",
-            "callback_data": f"{bus_number}|{direction['Direction']}",
-        }
-        inline_keyboard.append([button])
-    send_message_inline_keyboard(chat_id, "Please select direction:", inline_keyboard)
+    try:
+        directions = get_bus_directions(bus_number)
+        inline_keyboard = []
+        for direction in directions:
+            button = {
+                "text": f"To {get_bus_stop_description(direction['DestinationCode'])}",
+                "callback_data": f"{bus_number}|{direction['Direction']}",
+            }
+            inline_keyboard.append([button])
+        send_message_inline_keyboard(
+            chat_id, "Please select direction:", inline_keyboard
+        )
+    except NoSearchResultsError as e:
+        handle_error(e, chat_id)

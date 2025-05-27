@@ -1,5 +1,7 @@
 import logging
 
+from exceptions.error_handling import handle_error
+
 from .commands import (
     handle_callback_query,
     handle_command,
@@ -18,8 +20,7 @@ def handle_message(data: dict):
         try:
             handle_callback_query(data["callback_query"])
         except Exception as e:
-            send_message(chat_id, str(e))
-            logging.error(str(e), exc_info=True)
+            handle_error(e, chat_id)
 
     if "message" in data:
         message = data["message"]
@@ -49,5 +50,4 @@ def handle_message(data: dict):
                     handle_state(chat_id, state, message)
                     clear_state(chat_id)
         except Exception as e:
-            send_message(chat_id, str(e))
-            logging.error(str(e), exc_info=True)
+            handle_error(e, chat_id)
