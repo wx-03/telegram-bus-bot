@@ -118,6 +118,9 @@ def busstop(chat_id: str, args: list[str]):
         search_query = " ".join(args).lower().strip()
         try:
             results = search_bus_stop_descriptions(search_query)
+            if len(results == 1):
+                result = results[0]
+                send_bus_services(chat_id, result["BusStopCode"])
             inline_keyboard = []
             for result in results:
                 for bus_stop in result:
