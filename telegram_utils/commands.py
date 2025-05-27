@@ -122,6 +122,7 @@ def busstop(chat_id: str, args: list[str]):
                 bus_stop = results[0][0]
                 print(results)
                 send_bus_services(chat_id, bus_stop["BusStopCode"])
+                return
             inline_keyboard = []
             for result in results:
                 for bus_stop in result:
