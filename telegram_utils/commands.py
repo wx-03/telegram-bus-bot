@@ -87,8 +87,6 @@ def help(chat_id: str):
         <b>🔍 Get bus timings by stop name:</b>
         <code>/busstop ang mo kio int</code>
         • You can also type /busstop, then send the name after
-        • If the name isn't exact, you'll get a list of similar matches  
-        • If multiple stops have the same name, a list of codes will be shown
 
         <b>🚍 Get bus timings by bus service number:</b>
         <code>/bus 123</code>
