@@ -33,7 +33,6 @@ from .messaging import (
     send_location,
     send_message,
     send_message_inline_keyboard,
-    send_message_inline_keyboard_from_list,
     typing,
 )
 from .state import State, set_state
