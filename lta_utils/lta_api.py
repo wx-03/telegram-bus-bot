@@ -11,7 +11,18 @@ API_KEY = os.getenv("API_KEY")
 HEADERS = {"AccountKey": API_KEY, "Accept": "application/json"}
 
 
-def get_bus_services_by_code(code: str) -> list[str]:
+def get_bus_services_by_code(code: str) -> list[dict]:
+    """Returns a list of bus service numbers and their next estimated arrival timings for the specified bus stop.
+
+    Args:
+        code (str): Code of the bus stop to get bus services for.
+
+    Raises:
+        APIError: If response status code is not 200.
+
+    Returns:
+        list[dict]: List of bus service numbers and their next estimated arrival timings.
+    """
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}", headers=HEADERS)
     if res.status_code != 200:
@@ -32,6 +43,20 @@ def get_bus_services_by_code(code: str) -> list[str]:
 
 
 def get_bus_timing(code: str, service: str) -> list[dict]:
+    """Returns the arrival information of the next 3 buses of the specified service number
+       at the given bus stop.
+
+    Args:
+        code (str): The code of the bus stop to check.
+        service (str): The bus service number.
+
+    Raises:
+        APIError: If response status code is not 200.
+        NoMoreBusError: If there are no upcoming buses for the given service at the bus stop.
+
+    Returns:
+        list[dict]: A list of up to 3 dictionaries, each representing an arriving bus.
+    """
     url = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
     res = requests.get(f"{url}?BusStopCode={code}&ServiceNo={service}", headers=HEADERS)
     if res.status_code != 200:
