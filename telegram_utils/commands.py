@@ -141,15 +141,15 @@ def sort_bus_services(service: dict) -> str:
 
 
 def send_bus_services(chat_id: str, bus_stop_code: str):
-    """_summary_
+    """Sends a message with buttons for each bus service of the bus stop.
 
     Args:
-        chat_id (str): _description_
-        bus_stop_code (str): _description_
+        chat_id (str): Chat ID.
+        bus_stop_code (str): Code of the bus stop to send bus services for.
 
     Raises:
-        NoMoreBusError: _description_
-        APIError: _description_
+        NoMoreBusError: If the bus stop no longer has any bus services.
+        APIError: If the API response status code is not 200.
     """
     services: list[str] = sorted(
         get_bus_services_by_code(bus_stop_code), key=sort_bus_services
@@ -172,6 +172,12 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
 
 
 def send_bus_stop_location(chat_id, bus_stop_code):
+    """Sends the location of the specified bus stop.
+
+    Args:
+        chat_id (_type_): Chat ID.
+        bus_stop_code (_type_): Code of the bus stop to send the location of.
+    """
     try:
         latitude, longitude = get_bus_stop_location(bus_stop_code)
         send_location(chat_id, latitude, longitude)
@@ -221,7 +227,7 @@ def handle_callback_query(data: dict):
 
 def send_bus_timings(chat_id: str, bus_stop_code: str, service_no: str):
     """Sends a message to the chat containing the arrival timings, load, and type of the
-       specified bus service at the specified bus stop
+       specified bus service at the specified bus stop.
 
     Args:
         chat_id (str)
@@ -251,7 +257,7 @@ class BusStopDistance:
     from the bus stop to a particular location.
 
     >, < and == are overloaded to order based on distance. This object is used to order bus stops within
-    a min heap based on distance
+    a min heap based on distance.
     """
 
     def __init__(self, distance: float, bus_stop: dict):
@@ -269,12 +275,12 @@ class BusStopDistance:
 
 
 def handle_location(chat_id: str, latitude: str, longitude: str):
-    """Sends a message with buttons for each of the 10 closest bus stops to the specified location
+    """Sends a message with buttons for each of the 10 closest bus stops to the specified location.
 
     Args:
-        chat_id (str): id of the chat
-        latitude (str): latitude of the location
-        longitude (str): longitude of the location
+        chat_id (str): ID of the chat.
+        latitude (str): Latitude of the location.
+        longitude (str):Llongitude of the location.
     """
     typing(chat_id)
     user_location = (float(latitude), float(longitude))
@@ -291,14 +297,14 @@ def handle_location(chat_id: str, latitude: str, longitude: str):
 
 
 def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict]:
-    """Returns a list of k closest bus stops to the specified location
+    """Returns a list of k closest bus stops to the specified location.
 
     Args:
-        user_location (tuple[float, float]): tuple containing longitude and latitude of the location
+        user_location (tuple[float, float]): tuple containing latitude and longitude of the location.
         k (int)
 
     Returns:
-        list[dict]: list of k closest bus stops
+        list[dict]: List of k closest bus stops.
     """
     stops_dist: list[BusStopDistance] = []
     with open("storage/bus_stops.json", "r") as f:
@@ -316,7 +322,7 @@ def get_closest_k_stops(user_location: tuple[float, float], k: int) -> list[dict
 
 
 def bus(chat_id: str, args: list[str]):
-    """Handles the /bus command
+    """Handles the /bus command.
 
     Args:
         chat_id (str)
