@@ -10,9 +10,10 @@ WORKDIR /code
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN python3 set_webhook.py
 
 COPY . .
+
+RUN python3 set_webhook.py
 
 EXPOSE 8080
 
