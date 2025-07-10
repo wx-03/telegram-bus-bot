@@ -1,12 +1,16 @@
 import logging
 
+from dotenv import load_dotenv
 from flask import Flask, request
 
+import set_webhook
 from telegram_utils.message_handling import handle_message
 
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+
+set_webhook.main()
 
 
 @app.route("/ping", methods=["GET"])
