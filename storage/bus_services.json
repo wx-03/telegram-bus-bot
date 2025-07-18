@@ -145,8 +145,8 @@
                 "OriginCode": "65009",
                 "DestinationCode": "54009",
                 "AM_Peak_Freq": "08-15",
-                "AM_Offpeak_Freq": "11-16",
-                "PM_Peak_Freq": "10-11",
+                "AM_Offpeak_Freq": "10-15",
+                "PM_Peak_Freq": "10-13",
                 "PM_Offpeak_Freq": "17-20"
             }
         ]
@@ -300,11 +300,11 @@
             {
                 "Direction": 1,
                 "Category": "TRUNK",
-                "OriginCode": "65009",
-                "DestinationCode": "65009",
+                "OriginCode": "69009",
+                "DestinationCode": "69009",
                 "AM_Peak_Freq": "04-09",
-                "AM_Offpeak_Freq": "05-10",
-                "PM_Peak_Freq": "09-10",
+                "AM_Offpeak_Freq": "08-10",
+                "PM_Peak_Freq": "08-10",
                 "PM_Offpeak_Freq": "10-14"
             }
         ]
@@ -316,10 +316,10 @@
             {
                 "Direction": 1,
                 "Category": "TRUNK",
-                "OriginCode": "65009",
+                "OriginCode": "69009",
                 "DestinationCode": "76059",
-                "AM_Peak_Freq": "19-40",
-                "AM_Offpeak_Freq": "22-38",
+                "AM_Peak_Freq": "03-04",
+                "AM_Offpeak_Freq": "-",
                 "PM_Peak_Freq": "-",
                 "PM_Offpeak_Freq": "-"
             }
@@ -1264,10 +1264,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "64009",
                 "DestinationCode": "64009",
-                "AM_Peak_Freq": "14-15",
+                "AM_Peak_Freq": "13-15",
                 "AM_Offpeak_Freq": "13-16",
-                "PM_Peak_Freq": "15-16",
-                "PM_Offpeak_Freq": "13-16"
+                "PM_Peak_Freq": "14-16",
+                "PM_Offpeak_Freq": "14-16"
             }
         ]
     },
@@ -1538,22 +1538,22 @@
             {
                 "Direction": 1,
                 "Category": "TRUNK",
-                "OriginCode": "65009",
+                "OriginCode": "69009",
                 "DestinationCode": "58009",
                 "AM_Peak_Freq": "13-13",
                 "AM_Offpeak_Freq": "11-15",
                 "PM_Peak_Freq": "-",
-                "PM_Offpeak_Freq": "14-15"
+                "PM_Offpeak_Freq": "13-15"
             },
             {
                 "Direction": 2,
                 "Category": "TRUNK",
                 "OriginCode": "58009",
-                "DestinationCode": "65009",
+                "DestinationCode": "69009",
                 "AM_Peak_Freq": "11-11",
                 "AM_Offpeak_Freq": "09-15",
                 "PM_Peak_Freq": "-",
-                "PM_Offpeak_Freq": "13-15"
+                "PM_Offpeak_Freq": "12-14"
             }
         ]
     },
@@ -1580,21 +1580,21 @@
             {
                 "Direction": 1,
                 "Category": "TRUNK",
-                "OriginCode": "65009",
+                "OriginCode": "69009",
                 "DestinationCode": "58009",
-                "AM_Peak_Freq": "11-15",
+                "AM_Peak_Freq": "08-14",
                 "AM_Offpeak_Freq": "-",
-                "PM_Peak_Freq": "10-12",
+                "PM_Peak_Freq": "10-11",
                 "PM_Offpeak_Freq": "-"
             },
             {
                 "Direction": 2,
                 "Category": "TRUNK",
                 "OriginCode": "58009",
-                "DestinationCode": "65009",
-                "AM_Peak_Freq": "12-13",
+                "DestinationCode": "69009",
+                "AM_Peak_Freq": "11-13",
                 "AM_Offpeak_Freq": "-",
-                "PM_Peak_Freq": "10-11",
+                "PM_Peak_Freq": "07-13",
                 "PM_Offpeak_Freq": "-"
             }
         ]
@@ -1659,7 +1659,7 @@
                 "AM_Peak_Freq": "11-14",
                 "AM_Offpeak_Freq": "13-16",
                 "PM_Peak_Freq": "14-14",
-                "PM_Offpeak_Freq": "14-18"
+                "PM_Offpeak_Freq": "16-18"
             },
             {
                 "Direction": 2,
@@ -1668,7 +1668,7 @@
                 "DestinationCode": "10009",
                 "AM_Peak_Freq": "12-12",
                 "AM_Offpeak_Freq": "12-15",
-                "PM_Peak_Freq": "14-15",
+                "PM_Peak_Freq": "14-14",
                 "PM_Offpeak_Freq": "15-17"
             }
         ]
@@ -2198,10 +2198,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "84009",
                 "DestinationCode": "17009",
-                "AM_Peak_Freq": "10-11",
-                "AM_Offpeak_Freq": "10-16",
-                "PM_Peak_Freq": "14-15",
-                "PM_Offpeak_Freq": "14-25"
+                "AM_Peak_Freq": "11-13",
+                "AM_Offpeak_Freq": "11-19",
+                "PM_Peak_Freq": "15-16",
+                "PM_Offpeak_Freq": "18-23"
             },
             {
                 "Direction": 2,
@@ -2209,9 +2209,9 @@
                 "OriginCode": "17009",
                 "DestinationCode": "84009",
                 "AM_Peak_Freq": "13-14",
-                "AM_Offpeak_Freq": "10-15",
-                "PM_Peak_Freq": "11-16",
-                "PM_Offpeak_Freq": "16-17"
+                "AM_Offpeak_Freq": "12-17",
+                "PM_Peak_Freq": "12-18",
+                "PM_Offpeak_Freq": "18-19"
             }
         ]
     },
@@ -2702,8 +2702,8 @@
                 "Category": "TRUNK",
                 "OriginCode": "67009",
                 "DestinationCode": "52009",
-                "AM_Peak_Freq": "10-12",
-                "AM_Offpeak_Freq": "06-12",
+                "AM_Peak_Freq": "12-12",
+                "AM_Offpeak_Freq": "08-12",
                 "PM_Peak_Freq": "09-11",
                 "PM_Offpeak_Freq": "09-16"
             },
@@ -2713,8 +2713,8 @@
                 "OriginCode": "52009",
                 "DestinationCode": "67009",
                 "AM_Peak_Freq": "12-14",
-                "AM_Offpeak_Freq": "09-13",
-                "PM_Peak_Freq": "05-11",
+                "AM_Offpeak_Freq": "08-14",
+                "PM_Peak_Freq": "09-11",
                 "PM_Offpeak_Freq": "10-16"
             }
         ]
@@ -2860,20 +2860,20 @@
                 "Category": "TRUNK",
                 "OriginCode": "67009",
                 "DestinationCode": "52009",
-                "AM_Peak_Freq": "13-15",
-                "AM_Offpeak_Freq": "12-15",
-                "PM_Peak_Freq": "13-18",
-                "PM_Offpeak_Freq": "14-16"
+                "AM_Peak_Freq": "08-12",
+                "AM_Offpeak_Freq": "08-12",
+                "PM_Peak_Freq": "09-11",
+                "PM_Offpeak_Freq": "11-15"
             },
             {
                 "Direction": 2,
                 "Category": "TRUNK",
                 "OriginCode": "52009",
                 "DestinationCode": "67009",
-                "AM_Peak_Freq": "14-14",
-                "AM_Offpeak_Freq": "12-16",
-                "PM_Peak_Freq": "12-15",
-                "PM_Offpeak_Freq": "13-17"
+                "AM_Peak_Freq": "09-11",
+                "AM_Offpeak_Freq": "08-12",
+                "PM_Peak_Freq": "07-11",
+                "PM_Offpeak_Freq": "11-14"
             }
         ]
     },
@@ -3253,9 +3253,9 @@
                 "OriginCode": "02101",
                 "DestinationCode": "02089",
                 "AM_Peak_Freq": "10-16",
-                "AM_Offpeak_Freq": "09-16",
+                "AM_Offpeak_Freq": "10-16",
                 "PM_Peak_Freq": "10-16",
-                "PM_Offpeak_Freq": "14-15"
+                "PM_Offpeak_Freq": "13-16"
             }
         ]
     },
@@ -3501,7 +3501,7 @@
                 "OriginCode": "77009",
                 "DestinationCode": "52499",
                 "AM_Peak_Freq": "07-12",
-                "AM_Offpeak_Freq": "11-14",
+                "AM_Offpeak_Freq": "10-14",
                 "PM_Peak_Freq": "12-16",
                 "PM_Offpeak_Freq": "14-16"
             },
@@ -3558,10 +3558,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "54009",
                 "DestinationCode": "82009",
-                "AM_Peak_Freq": "09-10",
-                "AM_Offpeak_Freq": "09-15",
-                "PM_Peak_Freq": "09-10",
-                "PM_Offpeak_Freq": "12-22"
+                "AM_Peak_Freq": "09-11",
+                "AM_Offpeak_Freq": "10-16",
+                "PM_Peak_Freq": "10-10",
+                "PM_Offpeak_Freq": "10-22"
             },
             {
                 "Direction": 2,
@@ -3569,9 +3569,9 @@
                 "OriginCode": "82009",
                 "DestinationCode": "54009",
                 "AM_Peak_Freq": "09-10",
-                "AM_Offpeak_Freq": "09-16",
-                "PM_Peak_Freq": "09-10",
-                "PM_Offpeak_Freq": "09-25"
+                "AM_Offpeak_Freq": "10-17",
+                "PM_Peak_Freq": "10-10",
+                "PM_Offpeak_Freq": "15-23"
             }
         ]
     },
@@ -3584,9 +3584,9 @@
                 "Category": "FEEDER",
                 "OriginCode": "84009",
                 "DestinationCode": "84009",
-                "AM_Peak_Freq": "04-06",
-                "AM_Offpeak_Freq": "04-10",
-                "PM_Peak_Freq": "05-06",
+                "AM_Peak_Freq": "06-07",
+                "AM_Offpeak_Freq": "05-11",
+                "PM_Peak_Freq": "07-07",
                 "PM_Offpeak_Freq": "08-14"
             }
         ]
@@ -3664,7 +3664,7 @@
                 "Category": "FEEDER",
                 "OriginCode": "84009",
                 "DestinationCode": "84009",
-                "AM_Peak_Freq": "07-09",
+                "AM_Peak_Freq": "07-08",
                 "AM_Offpeak_Freq": "07-13",
                 "PM_Peak_Freq": "08-08",
                 "PM_Offpeak_Freq": "08-19"
@@ -3716,6 +3716,22 @@
                 "AM_Offpeak_Freq": "12-12",
                 "PM_Peak_Freq": "10-12",
                 "PM_Offpeak_Freq": "10-15"
+            }
+        ]
+    },
+    "230m": {
+        "ServiceNo": "230M",
+        "Operator": "SBST",
+        "Directions": [
+            {
+                "Direction": 1,
+                "Category": "FEEDER",
+                "OriginCode": "52009",
+                "DestinationCode": "52009",
+                "AM_Peak_Freq": "08-14",
+                "AM_Offpeak_Freq": "14-17",
+                "PM_Peak_Freq": "12-15",
+                "PM_Offpeak_Freq": "12-15"
             }
         ]
     },
@@ -3892,10 +3908,10 @@
                 "Category": "FEEDER",
                 "OriginCode": "55231",
                 "DestinationCode": "55311",
-                "AM_Peak_Freq": "05-07",
-                "AM_Offpeak_Freq": "05-11",
-                "PM_Peak_Freq": "05-07",
-                "PM_Offpeak_Freq": "06-13"
+                "AM_Peak_Freq": "04-07",
+                "AM_Offpeak_Freq": "02-11",
+                "PM_Peak_Freq": "02-08",
+                "PM_Offpeak_Freq": "08-13"
             }
         ]
     },
@@ -4068,20 +4084,20 @@
                 "Category": "TRUNK",
                 "OriginCode": "75009",
                 "DestinationCode": "52009",
-                "AM_Peak_Freq": "09-12",
-                "AM_Offpeak_Freq": "07-14",
+                "AM_Peak_Freq": "10-13",
+                "AM_Offpeak_Freq": "10-15",
                 "PM_Peak_Freq": "13-14",
-                "PM_Offpeak_Freq": "13-14"
+                "PM_Offpeak_Freq": "13-16"
             },
             {
                 "Direction": 2,
                 "Category": "TRUNK",
                 "OriginCode": "52009",
                 "DestinationCode": "75009",
-                "AM_Peak_Freq": "11-12",
-                "AM_Offpeak_Freq": "09-15",
-                "PM_Peak_Freq": "08-11",
-                "PM_Offpeak_Freq": "12-17"
+                "AM_Peak_Freq": "12-15",
+                "AM_Offpeak_Freq": "11-15",
+                "PM_Peak_Freq": "12-18",
+                "PM_Offpeak_Freq": "14-18"
             }
         ]
     },
@@ -4406,10 +4422,10 @@
                 "Category": "FEEDER",
                 "OriginCode": "64009",
                 "DestinationCode": "64009",
-                "AM_Peak_Freq": "06-08",
-                "AM_Offpeak_Freq": "06-13",
-                "PM_Peak_Freq": "06-08",
-                "PM_Offpeak_Freq": "08-20"
+                "AM_Peak_Freq": "08-08",
+                "AM_Offpeak_Freq": "07-14",
+                "PM_Peak_Freq": "07-08",
+                "PM_Offpeak_Freq": "08-14"
             }
         ]
     },
@@ -5690,7 +5706,7 @@
                 "Category": "CITY_LINK",
                 "OriginCode": "65011",
                 "DestinationCode": "02089",
-                "AM_Peak_Freq": "07-08",
+                "AM_Peak_Freq": "05-06",
                 "AM_Offpeak_Freq": "-",
                 "PM_Peak_Freq": "-",
                 "PM_Offpeak_Freq": "-"
@@ -5702,7 +5718,7 @@
                 "DestinationCode": "65019",
                 "AM_Peak_Freq": "-",
                 "AM_Offpeak_Freq": "-",
-                "PM_Peak_Freq": "12-12",
+                "PM_Peak_Freq": "09-14",
                 "PM_Offpeak_Freq": "-"
             }
         ]
@@ -5820,10 +5836,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "75009",
                 "DestinationCode": "75009",
-                "AM_Peak_Freq": "06-07",
-                "AM_Offpeak_Freq": "05-12",
-                "PM_Peak_Freq": "06-08",
-                "PM_Offpeak_Freq": "09-25"
+                "AM_Peak_Freq": "06-08",
+                "AM_Offpeak_Freq": "07-11",
+                "PM_Peak_Freq": "06-09",
+                "PM_Offpeak_Freq": "08-18"
             }
         ]
     },
@@ -6387,9 +6403,9 @@
                 "OriginCode": "59009",
                 "DestinationCode": "59009",
                 "AM_Peak_Freq": "05-08",
-                "AM_Offpeak_Freq": "05-08",
+                "AM_Offpeak_Freq": "06-09",
                 "PM_Peak_Freq": "06-09",
-                "PM_Offpeak_Freq": "05-12"
+                "PM_Offpeak_Freq": "06-12"
             }
         ]
     },
@@ -6966,10 +6982,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "28009",
                 "DestinationCode": "28009",
-                "AM_Peak_Freq": "15-15",
-                "AM_Offpeak_Freq": "20-20",
-                "PM_Peak_Freq": "15-20",
-                "PM_Offpeak_Freq": "15-20"
+                "AM_Peak_Freq": "12-12",
+                "AM_Offpeak_Freq": "15-18",
+                "PM_Peak_Freq": "13-13",
+                "PM_Offpeak_Freq": "13-20"
             }
         ]
     },
@@ -7030,19 +7046,19 @@
                 "Category": "TRUNK",
                 "OriginCode": "44009",
                 "DestinationCode": "22009",
-                "AM_Peak_Freq": "06-07",
-                "AM_Offpeak_Freq": "05-13",
+                "AM_Peak_Freq": "05-09",
+                "AM_Offpeak_Freq": "07-13",
                 "PM_Peak_Freq": "06-09",
-                "PM_Offpeak_Freq": "09-12"
+                "PM_Offpeak_Freq": "08-14"
             },
             {
                 "Direction": 2,
                 "Category": "TRUNK",
                 "OriginCode": "22009",
                 "DestinationCode": "44009",
-                "AM_Peak_Freq": "06-07",
+                "AM_Peak_Freq": "05-09",
                 "AM_Offpeak_Freq": "05-13",
-                "PM_Peak_Freq": "07-09",
+                "PM_Peak_Freq": "07-10",
                 "PM_Offpeak_Freq": "10-13"
             }
         ]
@@ -7253,9 +7269,9 @@
                 "OriginCode": "24009",
                 "DestinationCode": "24009",
                 "AM_Peak_Freq": "-",
-                "AM_Offpeak_Freq": "07-18",
+                "AM_Offpeak_Freq": "08-20",
                 "PM_Peak_Freq": "08-11",
-                "PM_Offpeak_Freq": "11-21"
+                "PM_Offpeak_Freq": "11-19"
             }
         ]
     },
@@ -7680,7 +7696,7 @@
                 "Category": "TRUNK",
                 "OriginCode": "25009",
                 "DestinationCode": "25009",
-                "AM_Peak_Freq": "12-15",
+                "AM_Peak_Freq": "11-14",
                 "AM_Offpeak_Freq": "13-30",
                 "PM_Peak_Freq": "13-15",
                 "PM_Offpeak_Freq": "15-50"
@@ -7744,10 +7760,10 @@
                 "Category": "TRUNK",
                 "OriginCode": "22009",
                 "DestinationCode": "22009",
-                "AM_Peak_Freq": "07-10",
-                "AM_Offpeak_Freq": "09-17",
-                "PM_Peak_Freq": "10-10",
-                "PM_Offpeak_Freq": "10-24"
+                "AM_Peak_Freq": "07-09",
+                "AM_Offpeak_Freq": "09-15",
+                "PM_Peak_Freq": "10-11",
+                "PM_Offpeak_Freq": "10-20"
             }
         ]
     },
@@ -7968,7 +7984,7 @@
                 "Category": "TRUNK",
                 "OriginCode": "22009",
                 "DestinationCode": "22009",
-                "AM_Peak_Freq": "22-22",
+                "AM_Peak_Freq": "22-25",
                 "AM_Offpeak_Freq": "25-26",
                 "PM_Peak_Freq": "-",
                 "PM_Offpeak_Freq": "-"
@@ -8862,8 +8878,8 @@
                 "Category": "TRUNK",
                 "OriginCode": "45009",
                 "DestinationCode": "45009",
-                "AM_Peak_Freq": "07",
-                "AM_Offpeak_Freq": "07-11",
+                "AM_Peak_Freq": "07-09",
+                "AM_Offpeak_Freq": "07-12",
                 "PM_Peak_Freq": "06-09",
                 "PM_Offpeak_Freq": "09-12"
             }
@@ -8894,9 +8910,9 @@
                 "Category": "TRUNK",
                 "OriginCode": "44531",
                 "DestinationCode": "33041",
-                "AM_Peak_Freq": "12-44",
+                "AM_Peak_Freq": "21-44",
                 "AM_Offpeak_Freq": "-",
-                "PM_Peak_Freq": "08-28",
+                "PM_Peak_Freq": "09-28",
                 "PM_Offpeak_Freq": "09-80"
             }
         ]

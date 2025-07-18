@@ -5634,170 +5634,186 @@
         "1": [
             {
                 "StopSequence": 1,
-                "BusStopCode": "65009"
+                "BusStopCode": "69009"
             },
             {
                 "StopSequence": 2,
-                "BusStopCode": "65341"
+                "BusStopCode": "65739"
             },
             {
                 "StopSequence": 3,
-                "BusStopCode": "65331"
+                "BusStopCode": "65481"
             },
             {
                 "StopSequence": 4,
-                "BusStopCode": "65431"
+                "BusStopCode": "65351"
             },
             {
                 "StopSequence": 5,
-                "BusStopCode": "68111"
+                "BusStopCode": "65219"
             },
             {
                 "StopSequence": 6,
-                "BusStopCode": "68061"
+                "BusStopCode": "65341"
             },
             {
                 "StopSequence": 7,
-                "BusStopCode": "68091"
+                "BusStopCode": "65331"
             },
             {
                 "StopSequence": 8,
-                "BusStopCode": "68081"
+                "BusStopCode": "65431"
             },
             {
                 "StopSequence": 9,
-                "BusStopCode": "68101"
+                "BusStopCode": "68111"
             },
             {
                 "StopSequence": 10,
-                "BusStopCode": "68121"
+                "BusStopCode": "68061"
             },
             {
                 "StopSequence": 11,
-                "BusStopCode": "68161"
+                "BusStopCode": "68091"
             },
             {
                 "StopSequence": 12,
-                "BusStopCode": "68131"
+                "BusStopCode": "68081"
             },
             {
                 "StopSequence": 13,
-                "BusStopCode": "68141"
+                "BusStopCode": "68101"
             },
             {
                 "StopSequence": 14,
-                "BusStopCode": "68151"
+                "BusStopCode": "68121"
             },
             {
                 "StopSequence": 15,
-                "BusStopCode": "68171"
+                "BusStopCode": "68161"
             },
             {
                 "StopSequence": 16,
-                "BusStopCode": "59799"
+                "BusStopCode": "68131"
             },
             {
                 "StopSequence": 17,
-                "BusStopCode": "59779"
+                "BusStopCode": "68141"
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "59789"
+                "BusStopCode": "68151"
             },
             {
                 "StopSequence": 19,
-                "BusStopCode": "59479"
+                "BusStopCode": "68171"
             },
             {
                 "StopSequence": 20,
-                "BusStopCode": "59759"
+                "BusStopCode": "59799"
             },
             {
                 "StopSequence": 21,
-                "BusStopCode": "59749"
+                "BusStopCode": "59779"
             },
             {
                 "StopSequence": 22,
-                "BusStopCode": "59739"
+                "BusStopCode": "59789"
             },
             {
                 "StopSequence": 23,
-                "BusStopCode": "59509"
+                "BusStopCode": "59479"
             },
             {
                 "StopSequence": 24,
-                "BusStopCode": "59729"
+                "BusStopCode": "59759"
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "59031"
+                "BusStopCode": "59749"
             },
             {
                 "StopSequence": 26,
-                "BusStopCode": "59041"
+                "BusStopCode": "59739"
             },
             {
                 "StopSequence": 27,
-                "BusStopCode": "59051"
+                "BusStopCode": "59509"
             },
             {
                 "StopSequence": 28,
-                "BusStopCode": "59061"
+                "BusStopCode": "59729"
             },
             {
                 "StopSequence": 29,
-                "BusStopCode": "59079"
+                "BusStopCode": "59031"
             },
             {
                 "StopSequence": 30,
-                "BusStopCode": "59091"
+                "BusStopCode": "59041"
             },
             {
                 "StopSequence": 31,
-                "BusStopCode": "59251"
+                "BusStopCode": "59051"
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "59521"
+                "BusStopCode": "59061"
             },
             {
                 "StopSequence": 33,
-                "BusStopCode": "58549"
+                "BusStopCode": "59079"
             },
             {
                 "StopSequence": 34,
-                "BusStopCode": "58611"
+                "BusStopCode": "59091"
             },
             {
                 "StopSequence": 35,
-                "BusStopCode": "58609"
+                "BusStopCode": "59251"
             },
             {
                 "StopSequence": 36,
-                "BusStopCode": "58519"
+                "BusStopCode": "59521"
             },
             {
                 "StopSequence": 37,
-                "BusStopCode": "58059"
+                "BusStopCode": "58549"
             },
             {
                 "StopSequence": 38,
-                "BusStopCode": "58049"
+                "BusStopCode": "58611"
             },
             {
                 "StopSequence": 39,
-                "BusStopCode": "58339"
+                "BusStopCode": "58609"
             },
             {
                 "StopSequence": 40,
-                "BusStopCode": "58211"
+                "BusStopCode": "58519"
             },
             {
                 "StopSequence": 41,
-                "BusStopCode": "58251"
+                "BusStopCode": "58059"
             },
             {
                 "StopSequence": 42,
+                "BusStopCode": "58049"
+            },
+            {
+                "StopSequence": 43,
+                "BusStopCode": "58339"
+            },
+            {
+                "StopSequence": 44,
+                "BusStopCode": "58211"
+            },
+            {
+                "StopSequence": 45,
+                "BusStopCode": "58251"
+            },
+            {
+                "StopSequence": 46,
                 "BusStopCode": "58009"
             }
         ],
@@ -5968,7 +5984,23 @@
             },
             {
                 "StopSequence": 42,
-                "BusStopCode": "65009"
+                "BusStopCode": "65211"
+            },
+            {
+                "StopSequence": 43,
+                "BusStopCode": "65359"
+            },
+            {
+                "StopSequence": 44,
+                "BusStopCode": "65489"
+            },
+            {
+                "StopSequence": 45,
+                "BusStopCode": "65731"
+            },
+            {
+                "StopSequence": 46,
+                "BusStopCode": "69009"
             }
         ]
     },
@@ -6022,174 +6054,190 @@
         "1": [
             {
                 "StopSequence": 1,
-                "BusStopCode": "65009"
+                "BusStopCode": "69009"
             },
             {
                 "StopSequence": 2,
-                "BusStopCode": "65341"
+                "BusStopCode": "65739"
             },
             {
                 "StopSequence": 3,
-                "BusStopCode": "65331"
+                "BusStopCode": "65481"
             },
             {
                 "StopSequence": 4,
-                "BusStopCode": "65431"
+                "BusStopCode": "65351"
             },
             {
                 "StopSequence": 5,
-                "BusStopCode": "68111"
+                "BusStopCode": "65219"
             },
             {
                 "StopSequence": 6,
-                "BusStopCode": "68061"
+                "BusStopCode": "65341"
             },
             {
                 "StopSequence": 7,
-                "BusStopCode": "68091"
+                "BusStopCode": "65331"
             },
             {
                 "StopSequence": 8,
-                "BusStopCode": "68081"
+                "BusStopCode": "65431"
             },
             {
                 "StopSequence": 9,
-                "BusStopCode": "68101"
+                "BusStopCode": "68111"
             },
             {
                 "StopSequence": 10,
-                "BusStopCode": "68191"
+                "BusStopCode": "68061"
             },
             {
                 "StopSequence": 11,
-                "BusStopCode": "68181"
+                "BusStopCode": "68091"
             },
             {
                 "StopSequence": 12,
-                "BusStopCode": "68161"
+                "BusStopCode": "68081"
             },
             {
                 "StopSequence": 13,
-                "BusStopCode": "68131"
+                "BusStopCode": "68101"
             },
             {
                 "StopSequence": 14,
-                "BusStopCode": "68141"
+                "BusStopCode": "68191"
             },
             {
                 "StopSequence": 15,
-                "BusStopCode": "68151"
+                "BusStopCode": "68181"
             },
             {
                 "StopSequence": 16,
-                "BusStopCode": "68171"
+                "BusStopCode": "68161"
             },
             {
                 "StopSequence": 17,
-                "BusStopCode": "59799"
+                "BusStopCode": "68131"
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "59779"
+                "BusStopCode": "68141"
             },
             {
                 "StopSequence": 19,
-                "BusStopCode": "59789"
+                "BusStopCode": "68151"
             },
             {
                 "StopSequence": 20,
-                "BusStopCode": "59479"
+                "BusStopCode": "68171"
             },
             {
                 "StopSequence": 21,
-                "BusStopCode": "59759"
+                "BusStopCode": "59799"
             },
             {
                 "StopSequence": 22,
-                "BusStopCode": "59749"
+                "BusStopCode": "59779"
             },
             {
                 "StopSequence": 23,
-                "BusStopCode": "59739"
+                "BusStopCode": "59789"
             },
             {
                 "StopSequence": 24,
-                "BusStopCode": "59509"
+                "BusStopCode": "59479"
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "59729"
+                "BusStopCode": "59759"
             },
             {
                 "StopSequence": 26,
-                "BusStopCode": "59031"
+                "BusStopCode": "59749"
             },
             {
                 "StopSequence": 27,
-                "BusStopCode": "59041"
+                "BusStopCode": "59739"
             },
             {
                 "StopSequence": 28,
-                "BusStopCode": "59051"
+                "BusStopCode": "59509"
             },
             {
                 "StopSequence": 29,
-                "BusStopCode": "59061"
+                "BusStopCode": "59729"
             },
             {
                 "StopSequence": 30,
-                "BusStopCode": "59079"
+                "BusStopCode": "59031"
             },
             {
                 "StopSequence": 31,
-                "BusStopCode": "59091"
+                "BusStopCode": "59041"
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "59251"
+                "BusStopCode": "59051"
             },
             {
                 "StopSequence": 33,
-                "BusStopCode": "59521"
+                "BusStopCode": "59061"
             },
             {
                 "StopSequence": 34,
-                "BusStopCode": "58549"
+                "BusStopCode": "59079"
             },
             {
                 "StopSequence": 35,
-                "BusStopCode": "58611"
+                "BusStopCode": "59091"
             },
             {
                 "StopSequence": 36,
-                "BusStopCode": "58609"
+                "BusStopCode": "59251"
             },
             {
                 "StopSequence": 37,
-                "BusStopCode": "58519"
+                "BusStopCode": "59521"
             },
             {
                 "StopSequence": 38,
-                "BusStopCode": "58059"
+                "BusStopCode": "58549"
             },
             {
                 "StopSequence": 39,
-                "BusStopCode": "58049"
+                "BusStopCode": "58611"
             },
             {
                 "StopSequence": 40,
-                "BusStopCode": "58339"
+                "BusStopCode": "58609"
             },
             {
                 "StopSequence": 41,
-                "BusStopCode": "58211"
+                "BusStopCode": "58519"
             },
             {
                 "StopSequence": 42,
-                "BusStopCode": "58251"
+                "BusStopCode": "58059"
             },
             {
                 "StopSequence": 43,
+                "BusStopCode": "58049"
+            },
+            {
+                "StopSequence": 44,
+                "BusStopCode": "58339"
+            },
+            {
+                "StopSequence": 45,
+                "BusStopCode": "58211"
+            },
+            {
+                "StopSequence": 46,
+                "BusStopCode": "58251"
+            },
+            {
+                "StopSequence": 47,
                 "BusStopCode": "58009"
             }
         ],
@@ -6364,7 +6412,23 @@
             },
             {
                 "StopSequence": 43,
-                "BusStopCode": "65009"
+                "BusStopCode": "65211"
+            },
+            {
+                "StopSequence": 44,
+                "BusStopCode": "65359"
+            },
+            {
+                "StopSequence": 45,
+                "BusStopCode": "65489"
+            },
+            {
+                "StopSequence": 46,
+                "BusStopCode": "65731"
+            },
+            {
+                "StopSequence": 47,
+                "BusStopCode": "69009"
             }
         ]
     },
@@ -12357,58 +12421,62 @@
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "92249"
+                "BusStopCode": "82251"
             },
             {
                 "StopSequence": 33,
-                "BusStopCode": "92041"
+                "BusStopCode": "92249"
             },
             {
                 "StopSequence": 34,
-                "BusStopCode": "92051"
+                "BusStopCode": "92041"
             },
             {
                 "StopSequence": 35,
-                "BusStopCode": "92061"
+                "BusStopCode": "92051"
             },
             {
                 "StopSequence": 36,
-                "BusStopCode": "92301"
+                "BusStopCode": "92061"
             },
             {
                 "StopSequence": 37,
-                "BusStopCode": "92141"
+                "BusStopCode": "92301"
             },
             {
                 "StopSequence": 38,
-                "BusStopCode": "92151"
+                "BusStopCode": "92141"
             },
             {
                 "StopSequence": 39,
-                "BusStopCode": "93051"
+                "BusStopCode": "92151"
             },
             {
                 "StopSequence": 40,
-                "BusStopCode": "93101"
+                "BusStopCode": "93051"
             },
             {
                 "StopSequence": 41,
-                "BusStopCode": "83171"
+                "BusStopCode": "93101"
             },
             {
                 "StopSequence": 42,
-                "BusStopCode": "83181"
+                "BusStopCode": "83171"
             },
             {
                 "StopSequence": 43,
-                "BusStopCode": "83191"
+                "BusStopCode": "83181"
             },
             {
                 "StopSequence": 44,
-                "BusStopCode": "83201"
+                "BusStopCode": "83191"
             },
             {
                 "StopSequence": 45,
+                "BusStopCode": "83201"
+            },
+            {
+                "StopSequence": 46,
                 "BusStopCode": "83321"
             }
         ],
@@ -12475,130 +12543,134 @@
             },
             {
                 "StopSequence": 16,
-                "BusStopCode": "82249"
+                "BusStopCode": "82259"
             },
             {
                 "StopSequence": 17,
-                "BusStopCode": "82129"
+                "BusStopCode": "82249"
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "82081"
+                "BusStopCode": "82129"
             },
             {
                 "StopSequence": 19,
+                "BusStopCode": "82081"
+            },
+            {
+                "StopSequence": 20,
                 "BusStopCode": "82091"
             },
             {
-                "StopSequence": 21,
+                "StopSequence": 22,
                 "BusStopCode": "81129"
             },
             {
-                "StopSequence": 22,
+                "StopSequence": 23,
                 "BusStopCode": "81119"
             },
             {
-                "StopSequence": 23,
+                "StopSequence": 24,
                 "BusStopCode": "81109"
             },
             {
-                "StopSequence": 24,
+                "StopSequence": 25,
                 "BusStopCode": "70251"
             },
             {
-                "StopSequence": 25,
+                "StopSequence": 26,
                 "BusStopCode": "70379"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 27,
                 "BusStopCode": "70201"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 28,
                 "BusStopCode": "70211"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 29,
                 "BusStopCode": "70221"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 30,
                 "BusStopCode": "70231"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 31,
                 "BusStopCode": "70241"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 32,
                 "BusStopCode": "70021"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 33,
                 "BusStopCode": "70031"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 34,
                 "BusStopCode": "70041"
             },
             {
-                "StopSequence": 34,
+                "StopSequence": 35,
                 "BusStopCode": "70051"
             },
             {
-                "StopSequence": 35,
+                "StopSequence": 36,
                 "BusStopCode": "70061"
             },
             {
-                "StopSequence": 36,
+                "StopSequence": 37,
                 "BusStopCode": "61031"
             },
             {
-                "StopSequence": 37,
+                "StopSequence": 38,
                 "BusStopCode": "61041"
             },
             {
-                "StopSequence": 38,
+                "StopSequence": 39,
                 "BusStopCode": "62111"
             },
             {
-                "StopSequence": 39,
+                "StopSequence": 40,
                 "BusStopCode": "62121"
             },
             {
-                "StopSequence": 40,
+                "StopSequence": 41,
                 "BusStopCode": "66381"
             },
             {
-                "StopSequence": 41,
+                "StopSequence": 42,
                 "BusStopCode": "66361"
             },
             {
-                "StopSequence": 42,
+                "StopSequence": 43,
                 "BusStopCode": "66039"
             },
             {
-                "StopSequence": 43,
+                "StopSequence": 44,
                 "BusStopCode": "66099"
             },
             {
-                "StopSequence": 44,
+                "StopSequence": 45,
                 "BusStopCode": "54109"
             },
             {
-                "StopSequence": 45,
+                "StopSequence": 46,
                 "BusStopCode": "54311"
             },
             {
-                "StopSequence": 46,
+                "StopSequence": 47,
                 "BusStopCode": "54321"
             },
             {
-                "StopSequence": 47,
+                "StopSequence": 48,
                 "BusStopCode": "54331"
             },
             {
-                "StopSequence": 48,
+                "StopSequence": 49,
                 "BusStopCode": "54009"
             }
         ]
@@ -17412,10 +17484,14 @@
             },
             {
                 "StopSequence": 13,
-                "BusStopCode": "61121"
+                "BusStopCode": "69099"
             },
             {
                 "StopSequence": 14,
+                "BusStopCode": "61121"
+            },
+            {
+                "StopSequence": 15,
                 "BusStopCode": "68009"
             }
         ]
@@ -27880,38 +27956,34 @@
             },
             {
                 "StopSequence": 24,
-                "BusStopCode": "31029"
-            },
-            {
-                "StopSequence": 25,
                 "BusStopCode": "31019"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 25,
                 "BusStopCode": "27129"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 26,
                 "BusStopCode": "27109"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 27,
                 "BusStopCode": "27099"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 28,
                 "BusStopCode": "21379"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 29,
                 "BusStopCode": "21369"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 31,
                 "BusStopCode": "22491"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 32,
                 "BusStopCode": "22009"
             }
         ],
@@ -27950,94 +28022,90 @@
             },
             {
                 "StopSequence": 10,
-                "BusStopCode": "31021"
-            },
-            {
-                "StopSequence": 11,
                 "BusStopCode": "31031"
             },
             {
-                "StopSequence": 12,
+                "StopSequence": 11,
                 "BusStopCode": "31041"
             },
             {
-                "StopSequence": 13,
+                "StopSequence": 12,
                 "BusStopCode": "31051"
             },
             {
-                "StopSequence": 14,
+                "StopSequence": 13,
                 "BusStopCode": "31151"
             },
             {
-                "StopSequence": 15,
+                "StopSequence": 14,
                 "BusStopCode": "31161"
             },
             {
-                "StopSequence": 16,
+                "StopSequence": 15,
                 "BusStopCode": "31171"
             },
             {
-                "StopSequence": 17,
+                "StopSequence": 16,
                 "BusStopCode": "31191"
             },
             {
-                "StopSequence": 18,
+                "StopSequence": 17,
                 "BusStopCode": "30011"
             },
             {
-                "StopSequence": 19,
+                "StopSequence": 18,
                 "BusStopCode": "30021"
             },
             {
-                "StopSequence": 20,
+                "StopSequence": 19,
                 "BusStopCode": "30031"
             },
             {
-                "StopSequence": 21,
+                "StopSequence": 20,
                 "BusStopCode": "30041"
             },
             {
-                "StopSequence": 22,
+                "StopSequence": 21,
                 "BusStopCode": "30051"
             },
             {
-                "StopSequence": 23,
+                "StopSequence": 22,
                 "BusStopCode": "30091"
             },
             {
-                "StopSequence": 24,
+                "StopSequence": 23,
                 "BusStopCode": "30081"
             },
             {
-                "StopSequence": 25,
+                "StopSequence": 24,
                 "BusStopCode": "44071"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 25,
                 "BusStopCode": "45451"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 26,
                 "BusStopCode": "44081"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 27,
                 "BusStopCode": "44091"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 28,
                 "BusStopCode": "44101"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 29,
                 "BusStopCode": "44119"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 30,
                 "BusStopCode": "44391"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 31,
                 "BusStopCode": "44009"
             }
         ]
@@ -32077,167 +32145,167 @@
                 "BusStopCode": "26201"
             },
             {
-                "StopSequence": 18,
+                "StopSequence": 17,
                 "BusStopCode": "26249"
             },
             {
-                "StopSequence": 19,
+                "StopSequence": 18,
                 "BusStopCode": "26259"
             },
             {
-                "StopSequence": 20,
+                "StopSequence": 19,
                 "BusStopCode": "26269"
             },
             {
-                "StopSequence": 21,
+                "StopSequence": 20,
                 "BusStopCode": "26279"
             },
             {
-                "StopSequence": 22,
+                "StopSequence": 21,
                 "BusStopCode": "26289"
             },
             {
-                "StopSequence": 23,
+                "StopSequence": 22,
                 "BusStopCode": "26299"
             },
             {
-                "StopSequence": 25,
+                "StopSequence": 23,
                 "BusStopCode": "26369"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 24,
                 "BusStopCode": "26379"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 25,
                 "BusStopCode": "26389"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 26,
                 "BusStopCode": "26399"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 27,
                 "BusStopCode": "26409"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 28,
                 "BusStopCode": "26419"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 29,
                 "BusStopCode": "26429"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 30,
                 "BusStopCode": "26211"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 31,
                 "BusStopCode": "26221"
             },
             {
-                "StopSequence": 34,
+                "StopSequence": 32,
                 "BusStopCode": "26431"
             },
             {
-                "StopSequence": 35,
+                "StopSequence": 33,
                 "BusStopCode": "26441"
             },
             {
-                "StopSequence": 36,
+                "StopSequence": 34,
                 "BusStopCode": "26451"
             },
             {
-                "StopSequence": 37,
+                "StopSequence": 35,
                 "BusStopCode": "26461"
             },
             {
-                "StopSequence": 38,
+                "StopSequence": 36,
                 "BusStopCode": "26311"
             },
             {
-                "StopSequence": 39,
+                "StopSequence": 37,
                 "BusStopCode": "26321"
             },
             {
-                "StopSequence": 40,
+                "StopSequence": 38,
                 "BusStopCode": "26331"
             },
             {
-                "StopSequence": 41,
+                "StopSequence": 39,
                 "BusStopCode": "26349"
             },
             {
-                "StopSequence": 42,
+                "StopSequence": 40,
                 "BusStopCode": "26261"
             },
             {
-                "StopSequence": 43,
+                "StopSequence": 41,
                 "BusStopCode": "26251"
             },
             {
-                "StopSequence": 44,
+                "StopSequence": 42,
                 "BusStopCode": "26241"
             },
             {
-                "StopSequence": 46,
+                "StopSequence": 43,
                 "BusStopCode": "26209"
             },
             {
-                "StopSequence": 47,
+                "StopSequence": 44,
                 "BusStopCode": "25469"
             },
             {
-                "StopSequence": 48,
+                "StopSequence": 45,
                 "BusStopCode": "25459"
             },
             {
-                "StopSequence": 49,
+                "StopSequence": 46,
                 "BusStopCode": "25449"
             },
             {
-                "StopSequence": 50,
+                "StopSequence": 47,
                 "BusStopCode": "25439"
             },
             {
-                "StopSequence": 51,
+                "StopSequence": 48,
                 "BusStopCode": "25429"
             },
             {
-                "StopSequence": 52,
+                "StopSequence": 49,
                 "BusStopCode": "25419"
             },
             {
-                "StopSequence": 53,
+                "StopSequence": 50,
                 "BusStopCode": "25269"
             },
             {
-                "StopSequence": 54,
+                "StopSequence": 51,
                 "BusStopCode": "25251"
             },
             {
-                "StopSequence": 55,
+                "StopSequence": 52,
                 "BusStopCode": "25231"
             },
             {
-                "StopSequence": 56,
+                "StopSequence": 53,
                 "BusStopCode": "25221"
             },
             {
-                "StopSequence": 57,
+                "StopSequence": 54,
                 "BusStopCode": "24509"
             },
             {
-                "StopSequence": 58,
+                "StopSequence": 55,
                 "BusStopCode": "24049"
             },
             {
-                "StopSequence": 59,
+                "StopSequence": 56,
                 "BusStopCode": "23089"
             },
             {
-                "StopSequence": 60,
+                "StopSequence": 57,
                 "BusStopCode": "24009"
             }
         ]
@@ -41232,6 +41300,59 @@
             {
                 "StopSequence": 31,
                 "BusStopCode": "52581"
+            }
+        ]
+    },
+    "230m": {
+        "ServiceNo": "230M",
+        "1": [
+            {
+                "StopSequence": 1,
+                "BusStopCode": "52009"
+            },
+            {
+                "StopSequence": 2,
+                "BusStopCode": "52509"
+            },
+            {
+                "StopSequence": 3,
+                "BusStopCode": "52329"
+            },
+            {
+                "StopSequence": 4,
+                "BusStopCode": "52339"
+            },
+            {
+                "StopSequence": 5,
+                "BusStopCode": "52311"
+            },
+            {
+                "StopSequence": 6,
+                "BusStopCode": "52571"
+            },
+            {
+                "StopSequence": 7,
+                "BusStopCode": "52561"
+            },
+            {
+                "StopSequence": 8,
+                "BusStopCode": "52319"
+            },
+            {
+                "StopSequence": 9,
+                "BusStopCode": "52331"
+            },
+            {
+                "StopSequence": 10,
+                "BusStopCode": "52321"
+            },
+            {
+                "StopSequence": 11,
+                "BusStopCode": "52501"
+            },
+            {
+                "StopSequence": 12,
+                "BusStopCode": "52009"
             }
         ]
     },
@@ -52382,219 +52503,279 @@
         "1": [
             {
                 "StopSequence": 1,
-                "BusStopCode": "65009"
+                "BusStopCode": "69009"
             },
             {
                 "StopSequence": 2,
-                "BusStopCode": "65221"
+                "BusStopCode": "65631"
             },
             {
                 "StopSequence": 3,
-                "BusStopCode": "65089"
+                "BusStopCode": "65621"
             },
             {
                 "StopSequence": 4,
-                "BusStopCode": "65079"
+                "BusStopCode": "65679"
             },
             {
                 "StopSequence": 5,
-                "BusStopCode": "65199"
+                "BusStopCode": "65459"
             },
             {
                 "StopSequence": 6,
-                "BusStopCode": "75359"
+                "BusStopCode": "65449"
             },
             {
                 "StopSequence": 7,
-                "BusStopCode": "75369"
+                "BusStopCode": "65401"
             },
             {
                 "StopSequence": 8,
-                "BusStopCode": "75319"
+                "BusStopCode": "65251"
             },
             {
                 "StopSequence": 9,
-                "BusStopCode": "75299"
+                "BusStopCode": "65221"
             },
             {
                 "StopSequence": 10,
-                "BusStopCode": "75379"
+                "BusStopCode": "65089"
             },
             {
                 "StopSequence": 11,
-                "BusStopCode": "75171"
+                "BusStopCode": "65079"
             },
             {
                 "StopSequence": 12,
-                "BusStopCode": "75141"
+                "BusStopCode": "65199"
             },
             {
                 "StopSequence": 13,
-                "BusStopCode": "75131"
+                "BusStopCode": "75359"
             },
             {
                 "StopSequence": 14,
-                "BusStopCode": "75121"
+                "BusStopCode": "75369"
             },
             {
                 "StopSequence": 15,
-                "BusStopCode": "76059"
+                "BusStopCode": "75319"
             },
             {
                 "StopSequence": 16,
-                "BusStopCode": "76069"
+                "BusStopCode": "75299"
             },
             {
                 "StopSequence": 17,
-                "BusStopCode": "76071"
+                "BusStopCode": "75379"
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "76081"
+                "BusStopCode": "75171"
             },
             {
                 "StopSequence": 19,
-                "BusStopCode": "76091"
+                "BusStopCode": "75141"
             },
             {
                 "StopSequence": 20,
-                "BusStopCode": "76101"
+                "BusStopCode": "75131"
             },
             {
                 "StopSequence": 21,
-                "BusStopCode": "76031"
+                "BusStopCode": "75121"
             },
             {
                 "StopSequence": 22,
-                "BusStopCode": "76231"
+                "BusStopCode": "76059"
             },
             {
                 "StopSequence": 23,
-                "BusStopCode": "76241"
+                "BusStopCode": "76069"
+            },
+            {
+                "StopSequence": 24,
+                "BusStopCode": "76071"
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "95151"
+                "BusStopCode": "76081"
             },
             {
                 "StopSequence": 26,
-                "BusStopCode": "95011"
+                "BusStopCode": "76091"
             },
             {
                 "StopSequence": 27,
-                "BusStopCode": "95109"
+                "BusStopCode": "76101"
             },
             {
                 "StopSequence": 28,
-                "BusStopCode": "95029"
+                "BusStopCode": "76031"
             },
             {
                 "StopSequence": 29,
-                "BusStopCode": "95129"
+                "BusStopCode": "76231"
             },
             {
                 "StopSequence": 30,
-                "BusStopCode": "95019"
-            },
-            {
-                "StopSequence": 31,
-                "BusStopCode": "95209"
+                "BusStopCode": "76241"
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "95159"
+                "BusStopCode": "95151"
+            },
+            {
+                "StopSequence": 33,
+                "BusStopCode": "95011"
             },
             {
                 "StopSequence": 34,
-                "BusStopCode": "76249"
+                "BusStopCode": "95109"
             },
             {
                 "StopSequence": 35,
-                "BusStopCode": "76239"
+                "BusStopCode": "95029"
             },
             {
                 "StopSequence": 36,
-                "BusStopCode": "76039"
+                "BusStopCode": "95129"
             },
             {
                 "StopSequence": 37,
-                "BusStopCode": "76109"
+                "BusStopCode": "95019"
             },
             {
                 "StopSequence": 38,
-                "BusStopCode": "76099"
+                "BusStopCode": "95209"
             },
             {
                 "StopSequence": 39,
-                "BusStopCode": "76089"
-            },
-            {
-                "StopSequence": 40,
-                "BusStopCode": "76079"
+                "BusStopCode": "95159"
             },
             {
                 "StopSequence": 41,
-                "BusStopCode": "76061"
+                "BusStopCode": "76249"
             },
             {
                 "StopSequence": 42,
-                "BusStopCode": "76051"
+                "BusStopCode": "76239"
             },
             {
                 "StopSequence": 43,
-                "BusStopCode": "75129"
+                "BusStopCode": "76039"
             },
             {
                 "StopSequence": 44,
-                "BusStopCode": "75139"
+                "BusStopCode": "76109"
             },
             {
                 "StopSequence": 45,
-                "BusStopCode": "75149"
+                "BusStopCode": "76099"
             },
             {
                 "StopSequence": 46,
-                "BusStopCode": "75179"
+                "BusStopCode": "76089"
             },
             {
                 "StopSequence": 47,
-                "BusStopCode": "75371"
+                "BusStopCode": "76079"
             },
             {
                 "StopSequence": 48,
-                "BusStopCode": "75291"
+                "BusStopCode": "76061"
             },
             {
                 "StopSequence": 49,
-                "BusStopCode": "75311"
+                "BusStopCode": "76051"
             },
             {
                 "StopSequence": 50,
-                "BusStopCode": "75361"
+                "BusStopCode": "75129"
             },
             {
                 "StopSequence": 51,
-                "BusStopCode": "75351"
+                "BusStopCode": "75139"
             },
             {
                 "StopSequence": 52,
-                "BusStopCode": "65191"
+                "BusStopCode": "75149"
             },
             {
                 "StopSequence": 53,
-                "BusStopCode": "65071"
+                "BusStopCode": "75179"
             },
             {
                 "StopSequence": 54,
-                "BusStopCode": "65081"
+                "BusStopCode": "75371"
             },
             {
                 "StopSequence": 55,
-                "BusStopCode": "65229"
+                "BusStopCode": "75291"
             },
             {
                 "StopSequence": 56,
-                "BusStopCode": "65009"
+                "BusStopCode": "75311"
+            },
+            {
+                "StopSequence": 57,
+                "BusStopCode": "75361"
+            },
+            {
+                "StopSequence": 58,
+                "BusStopCode": "75351"
+            },
+            {
+                "StopSequence": 59,
+                "BusStopCode": "65191"
+            },
+            {
+                "StopSequence": 60,
+                "BusStopCode": "65071"
+            },
+            {
+                "StopSequence": 61,
+                "BusStopCode": "65081"
+            },
+            {
+                "StopSequence": 62,
+                "BusStopCode": "65229"
+            },
+            {
+                "StopSequence": 63,
+                "BusStopCode": "65259"
+            },
+            {
+                "StopSequence": 64,
+                "BusStopCode": "65409"
+            },
+            {
+                "StopSequence": 65,
+                "BusStopCode": "65441"
+            },
+            {
+                "StopSequence": 66,
+                "BusStopCode": "65451"
+            },
+            {
+                "StopSequence": 67,
+                "BusStopCode": "65671"
+            },
+            {
+                "StopSequence": 68,
+                "BusStopCode": "65619"
+            },
+            {
+                "StopSequence": 69,
+                "BusStopCode": "65629"
+            },
+            {
+                "StopSequence": 70,
+                "BusStopCode": "65639"
+            },
+            {
+                "StopSequence": 71,
+                "BusStopCode": "69009"
             }
         ]
     },
@@ -52603,62 +52784,90 @@
         "1": [
             {
                 "StopSequence": 1,
-                "BusStopCode": "65009"
+                "BusStopCode": "69009"
             },
             {
                 "StopSequence": 2,
-                "BusStopCode": "65221"
+                "BusStopCode": "65631"
             },
             {
                 "StopSequence": 3,
-                "BusStopCode": "65089"
+                "BusStopCode": "65621"
             },
             {
                 "StopSequence": 4,
-                "BusStopCode": "65079"
+                "BusStopCode": "65679"
             },
             {
                 "StopSequence": 5,
-                "BusStopCode": "65199"
+                "BusStopCode": "65459"
             },
             {
                 "StopSequence": 6,
-                "BusStopCode": "75359"
+                "BusStopCode": "65449"
             },
             {
                 "StopSequence": 7,
-                "BusStopCode": "75369"
+                "BusStopCode": "65401"
             },
             {
                 "StopSequence": 8,
-                "BusStopCode": "75319"
+                "BusStopCode": "65251"
             },
             {
                 "StopSequence": 9,
-                "BusStopCode": "75299"
+                "BusStopCode": "65221"
             },
             {
                 "StopSequence": 10,
-                "BusStopCode": "75379"
+                "BusStopCode": "65089"
             },
             {
                 "StopSequence": 11,
-                "BusStopCode": "75171"
+                "BusStopCode": "65079"
             },
             {
                 "StopSequence": 12,
-                "BusStopCode": "75141"
+                "BusStopCode": "65199"
             },
             {
                 "StopSequence": 13,
-                "BusStopCode": "75131"
+                "BusStopCode": "75359"
             },
             {
                 "StopSequence": 14,
-                "BusStopCode": "75121"
+                "BusStopCode": "75369"
             },
             {
                 "StopSequence": 15,
+                "BusStopCode": "75319"
+            },
+            {
+                "StopSequence": 16,
+                "BusStopCode": "75299"
+            },
+            {
+                "StopSequence": 17,
+                "BusStopCode": "75379"
+            },
+            {
+                "StopSequence": 18,
+                "BusStopCode": "75171"
+            },
+            {
+                "StopSequence": 19,
+                "BusStopCode": "75141"
+            },
+            {
+                "StopSequence": 20,
+                "BusStopCode": "75131"
+            },
+            {
+                "StopSequence": 21,
+                "BusStopCode": "75121"
+            },
+            {
+                "StopSequence": 22,
                 "BusStopCode": "76059"
             }
         ]
@@ -56501,114 +56710,82 @@
             },
             {
                 "StopSequence": 8,
-                "BusStopCode": "31021"
-            },
-            {
-                "StopSequence": 9,
                 "BusStopCode": "31031"
             },
             {
-                "StopSequence": 10,
+                "StopSequence": 9,
                 "BusStopCode": "31041"
             },
             {
-                "StopSequence": 11,
+                "StopSequence": 10,
                 "BusStopCode": "31051"
             },
             {
-                "StopSequence": 12,
+                "StopSequence": 11,
                 "BusStopCode": "31149"
             },
             {
-                "StopSequence": 13,
+                "StopSequence": 12,
                 "BusStopCode": "31139"
             },
             {
-                "StopSequence": 14,
+                "StopSequence": 13,
                 "BusStopCode": "31129"
             },
             {
-                "StopSequence": 15,
+                "StopSequence": 14,
                 "BusStopCode": "31009"
             },
             {
-                "StopSequence": 16,
+                "StopSequence": 15,
                 "BusStopCode": "31121"
             },
             {
-                "StopSequence": 17,
+                "StopSequence": 16,
                 "BusStopCode": "31131"
             },
             {
-                "StopSequence": 18,
+                "StopSequence": 17,
                 "BusStopCode": "31141"
             },
             {
-                "StopSequence": 19,
-                "BusStopCode": "31061"
-            },
-            {
-                "StopSequence": 20,
-                "BusStopCode": "31071"
-            },
-            {
-                "StopSequence": 21,
-                "BusStopCode": "31201"
-            },
-            {
-                "StopSequence": 22,
-                "BusStopCode": "31211"
-            },
-            {
-                "StopSequence": 23,
-                "BusStopCode": "31079"
-            },
-            {
-                "StopSequence": 24,
-                "BusStopCode": "31069"
-            },
-            {
-                "StopSequence": 25,
+                "StopSequence": 18,
                 "BusStopCode": "31059"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 19,
                 "BusStopCode": "31049"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 20,
                 "BusStopCode": "31039"
             },
             {
-                "StopSequence": 28,
-                "BusStopCode": "31029"
-            },
-            {
-                "StopSequence": 29,
+                "StopSequence": 21,
                 "BusStopCode": "31019"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 22,
                 "BusStopCode": "27129"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 23,
                 "BusStopCode": "27109"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 24,
                 "BusStopCode": "27099"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 25,
                 "BusStopCode": "21379"
             },
             {
-                "StopSequence": 34,
+                "StopSequence": 26,
                 "BusStopCode": "22481"
             },
             {
-                "StopSequence": 35,
+                "StopSequence": 27,
                 "BusStopCode": "22009"
             }
         ]
@@ -74326,70 +74503,66 @@
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "84009"
-            },
-            {
-                "StopSequence": 19,
                 "BusStopCode": "84659"
             },
             {
-                "StopSequence": 20,
+                "StopSequence": 19,
                 "BusStopCode": "84359"
             },
             {
-                "StopSequence": 21,
+                "StopSequence": 20,
                 "BusStopCode": "84211"
             },
             {
-                "StopSequence": 22,
+                "StopSequence": 21,
                 "BusStopCode": "84521"
             },
             {
-                "StopSequence": 23,
+                "StopSequence": 22,
                 "BusStopCode": "84201"
             },
             {
-                "StopSequence": 24,
+                "StopSequence": 23,
                 "BusStopCode": "75341"
             },
             {
-                "StopSequence": 25,
+                "StopSequence": 24,
                 "BusStopCode": "75061"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 25,
                 "BusStopCode": "75229"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 26,
                 "BusStopCode": "75239"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 27,
                 "BusStopCode": "75249"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 28,
                 "BusStopCode": "75031"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 29,
                 "BusStopCode": "75151"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 30,
                 "BusStopCode": "75141"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 31,
                 "BusStopCode": "75131"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 32,
                 "BusStopCode": "75121"
             },
             {
-                "StopSequence": 34,
+                "StopSequence": 33,
                 "BusStopCode": "75009"
             }
         ]
@@ -81938,90 +82111,86 @@
             },
             {
                 "StopSequence": 14,
-                "BusStopCode": "59008"
+                "BusStopCode": "59009"
             },
             {
                 "StopSequence": 15,
-                "BusStopCode": "59008"
-            },
-            {
-                "StopSequence": 16,
                 "BusStopCode": "59091"
             },
             {
-                "StopSequence": 17,
+                "StopSequence": 16,
                 "BusStopCode": "59101"
             },
             {
-                "StopSequence": 18,
+                "StopSequence": 17,
                 "BusStopCode": "59121"
             },
             {
-                "StopSequence": 19,
+                "StopSequence": 18,
                 "BusStopCode": "59131"
             },
             {
-                "StopSequence": 20,
+                "StopSequence": 19,
                 "BusStopCode": "59301"
             },
             {
-                "StopSequence": 21,
+                "StopSequence": 20,
                 "BusStopCode": "59311"
             },
             {
-                "StopSequence": 22,
+                "StopSequence": 21,
                 "BusStopCode": "59081"
             },
             {
-                "StopSequence": 23,
+                "StopSequence": 22,
                 "BusStopCode": "59321"
             },
             {
-                "StopSequence": 24,
+                "StopSequence": 23,
                 "BusStopCode": "59561"
             },
             {
-                "StopSequence": 25,
+                "StopSequence": 24,
                 "BusStopCode": "59051"
             },
             {
-                "StopSequence": 26,
+                "StopSequence": 25,
                 "BusStopCode": "59339"
             },
             {
-                "StopSequence": 27,
+                "StopSequence": 26,
                 "BusStopCode": "59089"
             },
             {
-                "StopSequence": 28,
+                "StopSequence": 27,
                 "BusStopCode": "59319"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 28,
                 "BusStopCode": "59309"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 29,
                 "BusStopCode": "59139"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 30,
                 "BusStopCode": "59129"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 31,
                 "BusStopCode": "59109"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 32,
                 "BusStopCode": "59099"
             },
             {
-                "StopSequence": 34,
+                "StopSequence": 33,
                 "BusStopCode": "59073"
             },
             {
-                "StopSequence": 35,
+                "StopSequence": 34,
                 "BusStopCode": "59009"
             }
         ]
@@ -102505,274 +102674,246 @@
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "31061"
+                "BusStopCode": "31149"
             },
             {
                 "StopSequence": 26,
-                "BusStopCode": "31071"
+                "BusStopCode": "31139"
             },
             {
                 "StopSequence": 27,
-                "BusStopCode": "31081"
+                "BusStopCode": "31129"
             },
             {
                 "StopSequence": 28,
-                "BusStopCode": "34101"
+                "BusStopCode": "32121"
             },
             {
                 "StopSequence": 29,
-                "BusStopCode": "32101"
+                "BusStopCode": "32131"
             },
             {
                 "StopSequence": 30,
-                "BusStopCode": "32111"
+                "BusStopCode": "32141"
             },
             {
                 "StopSequence": 31,
-                "BusStopCode": "32031"
+                "BusStopCode": "32151"
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "32041"
-            },
-            {
-                "StopSequence": 33,
-                "BusStopCode": "32051"
-            },
-            {
-                "StopSequence": 34,
-                "BusStopCode": "32061"
-            },
-            {
-                "StopSequence": 35,
                 "BusStopCode": "32071"
             },
             {
-                "StopSequence": 36,
+                "StopSequence": 33,
                 "BusStopCode": "32081"
             },
             {
-                "StopSequence": 37,
+                "StopSequence": 34,
                 "BusStopCode": "33011"
             },
             {
-                "StopSequence": 38,
+                "StopSequence": 35,
                 "BusStopCode": "33021"
             },
             {
-                "StopSequence": 39,
+                "StopSequence": 36,
                 "BusStopCode": "33031"
             },
             {
-                "StopSequence": 40,
+                "StopSequence": 37,
                 "BusStopCode": "33041"
             },
             {
-                "StopSequence": 41,
+                "StopSequence": 38,
                 "BusStopCode": "33051"
             },
             {
-                "StopSequence": 42,
+                "StopSequence": 39,
                 "BusStopCode": "34011"
             },
             {
-                "StopSequence": 43,
+                "StopSequence": 40,
                 "BusStopCode": "34021"
             },
             {
-                "StopSequence": 44,
+                "StopSequence": 41,
                 "BusStopCode": "34031"
             },
             {
-                "StopSequence": 45,
+                "StopSequence": 42,
                 "BusStopCode": "34041"
             },
             {
-                "StopSequence": 46,
+                "StopSequence": 43,
                 "BusStopCode": "34051"
             },
             {
-                "StopSequence": 47,
+                "StopSequence": 44,
                 "BusStopCode": "34009"
             },
             {
-                "StopSequence": 48,
+                "StopSequence": 45,
                 "BusStopCode": "34059"
             },
             {
-                "StopSequence": 49,
+                "StopSequence": 46,
                 "BusStopCode": "34049"
             },
             {
-                "StopSequence": 50,
+                "StopSequence": 47,
                 "BusStopCode": "34039"
             },
             {
-                "StopSequence": 51,
+                "StopSequence": 48,
                 "BusStopCode": "34029"
             },
             {
-                "StopSequence": 52,
+                "StopSequence": 49,
                 "BusStopCode": "34019"
             },
             {
-                "StopSequence": 53,
+                "StopSequence": 50,
                 "BusStopCode": "33059"
             },
             {
-                "StopSequence": 54,
+                "StopSequence": 51,
                 "BusStopCode": "33049"
             },
             {
-                "StopSequence": 55,
+                "StopSequence": 52,
                 "BusStopCode": "33039"
             },
             {
-                "StopSequence": 56,
+                "StopSequence": 53,
                 "BusStopCode": "33029"
             },
             {
-                "StopSequence": 57,
+                "StopSequence": 54,
                 "BusStopCode": "33019"
             },
             {
-                "StopSequence": 58,
+                "StopSequence": 55,
                 "BusStopCode": "32089"
             },
             {
+                "StopSequence": 56,
+                "BusStopCode": "32159"
+            },
+            {
+                "StopSequence": 57,
+                "BusStopCode": "32149"
+            },
+            {
+                "StopSequence": 58,
+                "BusStopCode": "32139"
+            },
+            {
                 "StopSequence": 59,
-                "BusStopCode": "32079"
+                "BusStopCode": "32129"
             },
             {
                 "StopSequence": 60,
-                "BusStopCode": "32069"
+                "BusStopCode": "31121"
             },
             {
                 "StopSequence": 61,
-                "BusStopCode": "32059"
+                "BusStopCode": "31131"
             },
             {
                 "StopSequence": 62,
-                "BusStopCode": "32049"
+                "BusStopCode": "31141"
             },
             {
                 "StopSequence": 63,
-                "BusStopCode": "32039"
-            },
-            {
-                "StopSequence": 64,
-                "BusStopCode": "32119"
-            },
-            {
-                "StopSequence": 65,
-                "BusStopCode": "32109"
-            },
-            {
-                "StopSequence": 66,
-                "BusStopCode": "34109"
-            },
-            {
-                "StopSequence": 67,
-                "BusStopCode": "31089"
-            },
-            {
-                "StopSequence": 68,
-                "BusStopCode": "31079"
-            },
-            {
-                "StopSequence": 69,
-                "BusStopCode": "31069"
-            },
-            {
-                "StopSequence": 70,
                 "BusStopCode": "31151"
             },
             {
-                "StopSequence": 71,
+                "StopSequence": 64,
                 "BusStopCode": "31161"
             },
             {
-                "StopSequence": 72,
+                "StopSequence": 65,
                 "BusStopCode": "31171"
             },
             {
-                "StopSequence": 73,
+                "StopSequence": 66,
                 "BusStopCode": "31191"
             },
             {
-                "StopSequence": 74,
+                "StopSequence": 67,
                 "BusStopCode": "30011"
             },
             {
-                "StopSequence": 75,
+                "StopSequence": 68,
                 "BusStopCode": "30021"
             },
             {
-                "StopSequence": 76,
+                "StopSequence": 69,
                 "BusStopCode": "30031"
             },
             {
-                "StopSequence": 77,
+                "StopSequence": 70,
                 "BusStopCode": "30041"
             },
             {
-                "StopSequence": 78,
+                "StopSequence": 71,
                 "BusStopCode": "30051"
             },
             {
-                "StopSequence": 79,
+                "StopSequence": 72,
                 "BusStopCode": "30091"
             },
             {
-                "StopSequence": 80,
+                "StopSequence": 73,
                 "BusStopCode": "30081"
             },
             {
-                "StopSequence": 81,
+                "StopSequence": 74,
                 "BusStopCode": "44071"
             },
             {
-                "StopSequence": 82,
+                "StopSequence": 75,
                 "BusStopCode": "44519"
             },
             {
-                "StopSequence": 83,
+                "StopSequence": 76,
                 "BusStopCode": "44529"
             },
             {
-                "StopSequence": 84,
+                "StopSequence": 77,
                 "BusStopCode": "44469"
             },
             {
-                "StopSequence": 85,
+                "StopSequence": 78,
                 "BusStopCode": "44539"
             },
             {
-                "StopSequence": 86,
+                "StopSequence": 79,
                 "BusStopCode": "44399"
             },
             {
-                "StopSequence": 87,
+                "StopSequence": 80,
                 "BusStopCode": "44299"
             },
             {
-                "StopSequence": 88,
+                "StopSequence": 81,
                 "BusStopCode": "44289"
             },
             {
-                "StopSequence": 89,
+                "StopSequence": 82,
                 "BusStopCode": "44279"
             },
             {
-                "StopSequence": 90,
+                "StopSequence": 83,
                 "BusStopCode": "44141"
             },
             {
-                "StopSequence": 91,
+                "StopSequence": 84,
                 "BusStopCode": "44251"
             },
             {
-                "StopSequence": 92,
+                "StopSequence": 85,
                 "BusStopCode": "45009"
             }
         ]
@@ -102883,66 +103024,54 @@
             },
             {
                 "StopSequence": 18,
-                "BusStopCode": "31061"
+                "BusStopCode": "31149"
             },
             {
                 "StopSequence": 19,
-                "BusStopCode": "31071"
+                "BusStopCode": "31139"
             },
             {
                 "StopSequence": 20,
-                "BusStopCode": "31081"
+                "BusStopCode": "31129"
             },
             {
                 "StopSequence": 21,
-                "BusStopCode": "34101"
+                "BusStopCode": "32121"
             },
             {
                 "StopSequence": 22,
-                "BusStopCode": "32101"
+                "BusStopCode": "32131"
             },
             {
                 "StopSequence": 23,
-                "BusStopCode": "32111"
+                "BusStopCode": "32141"
             },
             {
                 "StopSequence": 24,
-                "BusStopCode": "32031"
+                "BusStopCode": "32151"
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "32041"
-            },
-            {
-                "StopSequence": 26,
-                "BusStopCode": "32051"
-            },
-            {
-                "StopSequence": 27,
-                "BusStopCode": "32061"
-            },
-            {
-                "StopSequence": 28,
                 "BusStopCode": "32071"
             },
             {
-                "StopSequence": 29,
+                "StopSequence": 26,
                 "BusStopCode": "32081"
             },
             {
-                "StopSequence": 30,
+                "StopSequence": 27,
                 "BusStopCode": "33011"
             },
             {
-                "StopSequence": 31,
+                "StopSequence": 28,
                 "BusStopCode": "33021"
             },
             {
-                "StopSequence": 32,
+                "StopSequence": 29,
                 "BusStopCode": "33031"
             },
             {
-                "StopSequence": 33,
+                "StopSequence": 30,
                 "BusStopCode": "33041"
             }
         ]
@@ -103048,94 +103177,82 @@
             },
             {
                 "StopSequence": 25,
-                "BusStopCode": "31061"
+                "BusStopCode": "31149"
             },
             {
                 "StopSequence": 26,
-                "BusStopCode": "31071"
+                "BusStopCode": "31139"
             },
             {
                 "StopSequence": 27,
-                "BusStopCode": "31081"
+                "BusStopCode": "31129"
             },
             {
                 "StopSequence": 28,
-                "BusStopCode": "34101"
+                "BusStopCode": "32121"
             },
             {
                 "StopSequence": 29,
-                "BusStopCode": "32101"
+                "BusStopCode": "32131"
             },
             {
                 "StopSequence": 30,
-                "BusStopCode": "32111"
+                "BusStopCode": "32141"
             },
             {
                 "StopSequence": 31,
-                "BusStopCode": "32031"
+                "BusStopCode": "32151"
             },
             {
                 "StopSequence": 32,
-                "BusStopCode": "32041"
-            },
-            {
-                "StopSequence": 33,
-                "BusStopCode": "32051"
-            },
-            {
-                "StopSequence": 34,
-                "BusStopCode": "32061"
-            },
-            {
-                "StopSequence": 35,
                 "BusStopCode": "32071"
             },
             {
-                "StopSequence": 36,
+                "StopSequence": 33,
                 "BusStopCode": "32081"
             },
             {
-                "StopSequence": 37,
+                "StopSequence": 34,
                 "BusStopCode": "33011"
             },
             {
-                "StopSequence": 38,
+                "StopSequence": 35,
                 "BusStopCode": "33021"
             },
             {
-                "StopSequence": 39,
+                "StopSequence": 36,
                 "BusStopCode": "33031"
             },
             {
-                "StopSequence": 40,
+                "StopSequence": 37,
                 "BusStopCode": "33041"
             },
             {
-                "StopSequence": 41,
+                "StopSequence": 38,
                 "BusStopCode": "33051"
             },
             {
-                "StopSequence": 42,
+                "StopSequence": 39,
                 "BusStopCode": "34011"
             },
             {
-                "StopSequence": 43,
+                "StopSequence": 40,
                 "BusStopCode": "34021"
             },
             {
-                "StopSequence": 44,
+                "StopSequence": 41,
                 "BusStopCode": "34031"
             },
             {
-                "StopSequence": 45,
+                "StopSequence": 42,
                 "BusStopCode": "34041"
             },
             {
-                "StopSequence": 46,
+                "StopSequence": 43,
                 "BusStopCode": "34051"
             },
             {
-                "StopSequence": 47,
+                "StopSequence": 44,
                 "BusStopCode": "34009"
             }
         ]
