@@ -235,6 +235,8 @@ def send_bus_timings(chat_id: str, bus_stop_code: str, service_no: str):
         arrivals = get_bus_timing(bus_stop_code, service_no)
         message = f"<b>{get_bus_stop_description(bus_stop_code)} ({bus_stop_code})\nBus {service_no}</b>\n\n"
         for arrival in arrivals:
+            if arrival["EstimatedArrival"] == "":
+                continue
             duration = get_time_difference(arrival["EstimatedArrival"])
             timing = format_timing(arrival["EstimatedArrival"])
             if timing == "":
