@@ -246,7 +246,8 @@ def send_bus_timings(chat_id: str, bus_stop_code: str, service_no: str):
             message += (
                 f"<u>{timing} ({format_timedelta(duration)})</u>\n{load}\n{type}\n\n"
             )
-        send_message(chat_id, message)
+        button = {"text": "Refresh", "callback_data": f"{bus_stop_code}:{service_no}:0"}
+        send_message_inline_keyboard(chat_id, message, [[button]])
     except (APIError, NoMoreBusError, NoSearchResultsError) as e:
         handle_error(e, chat_id)
 
