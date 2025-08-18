@@ -280,7 +280,7 @@ def handle_location(chat_id: str, latitude: str, longitude: str):
     Args:
         chat_id (str): ID of the chat.
         latitude (str): Latitude of the location.
-        longitude (str):Llongitude of the location.
+        longitude (str): Longitude of the location.
     """
     typing(chat_id)
     user_location = (float(latitude), float(longitude))
