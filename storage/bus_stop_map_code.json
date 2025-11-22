@@ -25644,8 +25644,8 @@
         "BusStopCode": "65229",
         "RoadName": "Punggol Ctrl",
         "Description": "Blk 298",
-        "Latitude": 1.403622,
-        "Longitude": 103.904916
+        "Latitude": 1.403199,
+        "Longitude": 103.9054445
     },
     "65231": {
         "BusStopCode": "65231",
@@ -25686,8 +25686,8 @@
         "BusStopCode": "65259",
         "RoadName": "Punggol Ctrl",
         "Description": "Punggol Stn/Int",
-        "Latitude": 1.405351944,
-        "Longitude": 103.9018719
+        "Latitude": 1.4053405,
+        "Longitude": 103.9014515
     },
     "65261": {
         "BusStopCode": "65261",
@@ -27995,7 +27995,7 @@
     "67789": {
         "BusStopCode": "67789",
         "RoadName": "Buangkok Dr",
-        "Description": "Blk 409",
+        "Description": "Blk 409A",
         "Latitude": 1.388633,
         "Longitude": 103.877235
     },

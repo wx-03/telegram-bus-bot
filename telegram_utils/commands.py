@@ -157,11 +157,17 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
         raise NoMoreBusError()
     inline_keyboard = []
     for service in services:
-        inline_keyboard_button = {
+        inline_keyboard_button_service_no = {
             "text": f'{service["service"]} ({format_timedelta(get_time_difference(service["next_arrival"]))})',
             "callback_data": f"{bus_stop_code}:{service['service']}:0",
         }
-        inline_keyboard.append([inline_keyboard_button])
+        inline_keyboard_button_view_route = {
+            "text": "view route",
+            "callback_data": f"hi",
+        }
+        inline_keyboard.append(
+            [inline_keyboard_button_service_no, inline_keyboard_button_view_route]
+        )
     message = (
         f"<b>{bus_stop_description} ({bus_stop_code})</b>\nPlease select bus service:"
     )

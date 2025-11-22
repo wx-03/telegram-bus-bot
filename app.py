@@ -27,4 +27,4 @@ def webhook():
 
 if __name__ == "__main__":
     logging.basicConfig(filename="bot.log", filemode="w", level=logging.DEBUG)
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
