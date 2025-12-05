@@ -183,7 +183,7 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
         }
         inline_keyboard_button_view_route = {
             "text": "View route",
-            "callback_data": f"{service["service"]}|{bus_route_dir}",
+            "callback_data": f"{service['service']}|{bus_route_dir}",
         }
         inline_keyboard.append(
             [inline_keyboard_button_service_no, inline_keyboard_button_view_route]
