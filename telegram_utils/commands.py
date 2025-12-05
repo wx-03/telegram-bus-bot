@@ -137,6 +137,25 @@ def sort_bus_services(service: dict) -> str:
     return service["service"].zfill(3)
 
 
+def get_route_dir(service_no: str, bus_stop_code: str) -> str:
+    with open("storage/bus_routes.json", "r") as f:
+        bus_routes = json.load(f)
+
+        try:
+            routes_for_service = bus_routes[service_no.upper()]
+        except KeyError:
+            routes_for_service = bus_routes[service_no.lower()]
+
+        for dir_number in routes_for_service:
+            if dir_number == "ServiceNo":
+                continue
+            for bus_stop in routes_for_service[dir_number]:
+                if bus_stop["BusStopCode"] == bus_stop_code:
+                    return dir_number
+
+        raise Exception("This service does not go to this bus stop")
+
+
 def send_bus_services(chat_id: str, bus_stop_code: str):
     """Sends a message with buttons for each bus service of the bus stop.
 
@@ -148,7 +167,7 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
         NoMoreBusError: If the bus stop no longer has any bus services.
         APIError: If the API response status code is not 200.
     """
-    services: list[str] = sorted(
+    services: list[dict] = sorted(
         get_bus_services_by_code(bus_stop_code), key=sort_bus_services
     )
     bus_stop_description = get_bus_stop_description(bus_stop_code)
@@ -157,13 +176,14 @@ def send_bus_services(chat_id: str, bus_stop_code: str):
         raise NoMoreBusError()
     inline_keyboard = []
     for service in services:
+        bus_route_dir = get_route_dir(service["service"], bus_stop_code)
         inline_keyboard_button_service_no = {
             "text": f'{service["service"]} ({format_timedelta(get_time_difference(service["next_arrival"]))})',
             "callback_data": f"{bus_stop_code}:{service['service']}:0",
         }
         inline_keyboard_button_view_route = {
-            "text": "view route",
-            "callback_data": f"hi",
+            "text": "View route",
+            "callback_data": f"{service["service"]}|{bus_route_dir}",
         }
         inline_keyboard.append(
             [inline_keyboard_button_service_no, inline_keyboard_button_view_route]
@@ -210,6 +230,7 @@ def handle_callback_query(data: dict):
         except (NoSearchResultsError, NoMoreBusError) as e:
             handle_error(e, chat_id)
     elif "|" in data["data"]:
+        typing(chat_id)
         try:
             service_no, direction = callback_data.split("|")
             bus_stop_codes = get_bus_route(service_no, direction)

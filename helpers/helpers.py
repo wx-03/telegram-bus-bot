@@ -149,8 +149,15 @@ def get_bus_directions(service_no: str) -> list[dict]:
     """
     with open("storage/bus_services.json", "r") as f:
         bus_services = json.load(f)
+
+        service_no = service_no.lower()
+
+        if not service_no in bus_services:
+            service_no = service_no.upper()
+
         if not service_no in bus_services:
             raise NoSearchResultsError("No buses with this service number")
+
         return bus_services[service_no]["Directions"]
 
 
@@ -169,6 +176,9 @@ def get_bus_route(service_no: str, direction: str) -> list[str]:
     """
     with open("storage/bus_routes.json", "r") as f:
         bus_routes = json.load(f)
+        service_no = service_no.lower()
+        if not service_no in bus_routes:
+            service_no = service_no.upper()
         if not service_no in bus_routes:
             raise NoSearchResultsError("No buses with this service number")
         if not direction in bus_routes[service_no]:
